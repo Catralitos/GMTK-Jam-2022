@@ -7,6 +7,7 @@ namespace Player
 
         [HideInInspector] public PlayerMovement movement;
         [HideInInspector] public PlayerHealth health;
+        [HideInInspector] public PlayerBuffs buffs;
         [HideInInspector] public PlayerShooting shooting;
 
         #region SingleTon
@@ -21,6 +22,7 @@ namespace Player
         private void Awake()
         {
             Instance = this;
+            buffs = GetComponent<PlayerBuffs>();
             health = GetComponent<PlayerHealth>();
             shooting = GetComponent<PlayerShooting>();
             movement = GetComponent<PlayerMovement>();
@@ -35,30 +37,5 @@ namespace Player
                 Instance = null;
             }
         }
-
-        /*
-        public void AddBullets()
-        {
-            if (_moreBulletsCollected < maxPowerUps)
-            {
-                shooting.plus2++;
-            }
-            else
-            {
-                TimeManager.Instance.IncreaseScore(scorePerPowerUp);
-            }
-        }
-        
-        public void AddFireRate()
-        {
-            if (_fireRatesCollected < maxPowerUps)
-            {
-                shooting.currentFireRate /= 2;
-            }
-            else
-            {
-                TimeManager.Instance.IncreaseScore(scorePerPowerUp);
-            }
-        }*/
     }
 }
