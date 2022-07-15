@@ -125,3 +125,7 @@ $RECYCLE.BIN/
 © 2020 GitHub, Inc.
 
 PrototipoMiguel/ChampionsOfTheVoid/Library/
+
+.DS_Store
+
+.vsconfig
