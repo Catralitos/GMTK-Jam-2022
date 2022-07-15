@@ -29,7 +29,6 @@ public class EnemyHealth : MonoBehaviour
     {
         if (attackId != lastHitId)
         {
-            SoundManager.Instance.PlayOneShot("DealDamage");
             lastHitId = attackId;
             CurrentHealth -= damage;
             GetComponent<EnemyMovement>().TakeKnockback();
