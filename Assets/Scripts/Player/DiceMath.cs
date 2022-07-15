@@ -15,32 +15,44 @@ namespace Player
         public int RollDice()
         {
             float roll = Random.Range(0f, 1f);
+            float sum = 0;
             if (roll <= _faceChances[0])
             {
                 return 1;
             }
 
-            if (roll > _faceChances[0] && roll <= _faceChances[1])
+            sum += _faceChances[0];
+            
+            if (roll > sum && (sum + roll) <= _faceChances[1])
             {
                 return 2;
             }
 
-            if (roll > _faceChances[1] && roll <= _faceChances[2])
+            sum += _faceChances[1];
+
+            
+            if (roll > sum && (sum + roll) <= _faceChances[2])
             {
                 return 3;
             }
+            
+            sum += _faceChances[2];
 
-            if (roll > _faceChances[2] && roll <= _faceChances[3])
+            if (roll > sum && (sum + roll) <= _faceChances[3])
             {
                 return 4;
             }
+            
+            sum += _faceChances[3];
 
-            if (roll > _faceChances[3] && roll <= _faceChances[4])
+            if (roll > sum && (sum + roll) <= _faceChances[4])
             {
                 return 5;
             }
 
-            if (roll > _faceChances[4] && roll <= _faceChances[5])
+            sum += _faceChances[4];
+            
+            if (roll > sum && (sum + roll) <= _faceChances[5])
             {
                 return 6;
             }
