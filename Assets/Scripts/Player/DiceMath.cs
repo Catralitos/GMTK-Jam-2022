@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Player
 {
@@ -61,6 +62,11 @@ namespace Player
                     _faceChances[i] -= percentageIncrease / 5f;
                 }
             }
+        }
+
+        public int GetFacePercentage(int face)
+        {
+            return Mathf.RoundToInt(_faceChances[face - 1] * 100);
         }
     }
 }
