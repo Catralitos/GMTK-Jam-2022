@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Bullets;
 using UnityEngine;
 
@@ -5,8 +6,8 @@ namespace Player
 {
     public class PlayerShooting : MonoBehaviour
     {
-        //[HideInInspector] public int plus2;
-        //public float bulletAngle = 30.0f;
+        public int baseBullets = 1;
+        public float coneAngle = 60.0f;
         public float cooldown = 1.0f;
         [HideInInspector] public float cooldownLeft;
 
@@ -14,11 +15,6 @@ namespace Player
         public Transform firePoint;
 
         private bool _canShoot = true;
-
-        private void Start()
-        {
-            //plus2 = 0;
-        }
 
         private void Update()
         {
@@ -30,38 +26,70 @@ namespace Player
         {
             if (!_canShoot) return;
             var gunPosition = firePoint.position;
-            GameObject instantiatedBullet = Instantiate(bulletPrefab, gunPosition, firePoint.rotation);
-            DiceBullet diceBullet = instantiatedBullet.GetComponent<DiceBullet>();
+
+            int bulletsToSpawn = baseBullets;
 
             //apply buffs
             PlayerBuffs buffs = PlayerEntity.Instance.buffs;
 
+            if (buffs.bulletsMultipliersLeft > 0)
+            {
+                bulletsToSpawn *= 2;
+                buffs.bulletsMultipliersLeft--;
+            }
+
+            List<DiceBullet> bulletsSpawned = new List<DiceBullet>(bulletsToSpawn);
+
+            float angleInterval = coneAngle / (bulletsToSpawn - 1);
+
+            if (bulletsToSpawn > 1)
+            {
+                for (int i = bulletsToSpawn - 1; i >= 0; i--)
+                {
+                    float angle = firePoint.rotation.eulerAngles.y + (coneAngle - angleInterval * i);
+                    //resolver a equação
+                    float modifier = -(angle - 30);
+                    Quaternion fireAngle =
+                        Quaternion.Euler(firePoint.rotation.eulerAngles + modifier * Vector3.forward);
+                    GameObject instantiatedBullet = Instantiate(bulletPrefab, gunPosition, fireAngle);
+                    bulletsSpawned.Add(instantiatedBullet.GetComponent<DiceBullet>());
+                }
+            }
+            else
+            {
+                GameObject instantiatedBullet = Instantiate(bulletPrefab, gunPosition, firePoint.rotation);
+                bulletsSpawned.Add(instantiatedBullet.GetComponent<DiceBullet>());
+            }
+
             if (buffs.piercingBulletsLeft > 0)
             {
-                diceBullet.piercingBullet = true;
+                foreach (DiceBullet diceBullet in bulletsSpawned)
+                {
+                    diceBullet.piercingBullet = true;
+                }
+
                 buffs.piercingBulletsLeft--;
             }
 
             if (buffs.superBulletsLeft > 0)
             {
-                diceBullet.superBullet = true;
+                foreach (DiceBullet diceBullet in bulletsSpawned)
+                {
+                    diceBullet.superBullet = true;
+                }
+
                 buffs.superBulletsLeft--;
             }
 
             if (buffs.knockbackBulletsLeft > 0)
             {
-                diceBullet.knockbackBullet = true;
+                foreach (DiceBullet diceBullet in bulletsSpawned)
+                {
+                    diceBullet.knockbackBullet = true;
+                }
+
                 buffs.knockbackBulletsLeft--;
             }
-
-            /*for (var i = 0; i < plus2; i++)
-            {
-                var angles = firePoint.rotation.eulerAngles;
-                var plus = angles + (i + 1) * this.bulletAngle * Vector3.forward;
-                var minus = angles - (i + 1) * this.bulletAngle * Vector3.forward;
-                Instantiate(bulletPrefab, gunPosition, Quaternion.Euler(plus));
-                Instantiate(bulletPrefab, gunPosition, Quaternion.Euler(minus));
-            }*/
 
             _canShoot = false;
             cooldownLeft = cooldown;
