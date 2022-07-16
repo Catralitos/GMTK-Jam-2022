@@ -119,6 +119,14 @@ namespace UI
                 }
             }
 
+            for (int i = 0; i < addToggles.Count; i++)
+            {
+                ColorBlock cb = addToggles[i].colors;
+                cb.normalColor = Color.gray;
+                addToggles[i].colors = cb;
+                minusToggles[i].colors = cb;
+            }
+
             Time.timeScale = 0;
             UpdateValues();
         }
@@ -148,6 +156,7 @@ namespace UI
             {
                 percentageBars[i].fillAmount = _currentPercentages[i] / 1.0f;
             }
+            
         }
 
         private void AddToPercentage(int face)
