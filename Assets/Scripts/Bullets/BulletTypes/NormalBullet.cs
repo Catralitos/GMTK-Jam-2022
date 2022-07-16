@@ -10,7 +10,7 @@ namespace Bullets.BulletTypes
             OnObjectSpawn();
         }
 
-        public override void OnObjectSpawn()
+        public void OnObjectSpawn()
         {
             Body.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
             AudioManager.Instance.Play("PlayerFire");

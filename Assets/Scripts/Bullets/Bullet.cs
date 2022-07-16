@@ -1,25 +1,24 @@
 using Extensions;
 using Player;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace Bullets
 {
-    public class Bullet : MonoBehaviour, IPooledObject
+    public class Bullet : MonoBehaviour
     {
-        //o script inimigo deteta balas do player para receber dano
-        //logo este OnTrigger enter só é para magoar o player e destruir balas nas paredes
-        //se calhar podia ser tudo aqui, mas usaria muitos get components/ifs
-        //se calhar era mais simples mas agora nao sei como
-        public LayerMask playerLayer;
-        public LayerMask walls;
+        [HideInInspector] public bool knockbackBullet;
+        [HideInInspector] public bool piercingBullet;
+        [HideInInspector] public bool superBullet;
+        public float lifeSpan;
 
-        public GameObject explosionPrefab;
-        
-        public bool destroy;
+        public LayerMask enemies;
+
+        //public GameObject explosionPrefab;
+
         public int bulletDamage = 1;
         public float bulletSpeed = 20.0f;
 
+        private float _timeLeft;
         protected Rigidbody2D Body;
 
         private void Awake()
@@ -27,33 +26,26 @@ namespace Bullets
             Body = GetComponent<Rigidbody2D>();
         }
 
+        private void Start()
+        {
+            Body.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
+            _timeLeft = lifeSpan;
+        }
+
+        private void Update()
+        {
+            _timeLeft -= Time.deltaTime;
+            if (_timeLeft <= 0) Destroy(this.gameObject);
+        }
+
         //so para balas inimigas
-        private void OnTriggerEnter2D(Collider2D col)
+        private void OnCollisionEnter2D(Collision2D col)
         {
-            if (playerLayer.HasLayer(col.gameObject.layer) && !col.isTrigger && gameObject.layer != 6)
+            //O codigo de danificar inimigos fica nos inimigos
+            if (enemies.HasLayer(col.gameObject.layer))
             {
-                PlayerEntity.Instance.health.DoDamage();
+                PlayerEntity.Instance.buffs.ApplyBuff(PlayerEntity.Instance.dice.RollDice());
             }
-
-            if (!(walls.HasLayer(col.gameObject.layer) && !col.isTrigger)) return;
-            if (!destroy) gameObject.SetActive(false);
-            else Destroy(gameObject);
-            Instantiate(explosionPrefab, transform.position, quaternion.identity);
-        }
-
-        public virtual void OnObjectSpawn()
-        {
-            //do nothing, each bullet will know what to do
-        }
-
-        public virtual void OnObjectSpawn(float angle)
-        {
-            //do nothing, each bullet will know what to do
-        }
-
-        public virtual void OnObjectSpawn(float angle, float maxAngleStep)
-        {
-            //do nothing, each bullet will know what to do
         }
     }
 }

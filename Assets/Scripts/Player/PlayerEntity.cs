@@ -5,6 +5,7 @@ namespace Player
     public class PlayerEntity : MonoBehaviour
     {
 
+        [HideInInspector] public DiceMath dice;
         [HideInInspector] public PlayerMovement movement;
         [HideInInspector] public PlayerHealth health;
         [HideInInspector] public PlayerBuffs buffs;
@@ -22,6 +23,7 @@ namespace Player
         private void Awake()
         {
             Instance = this;
+            dice = GetComponent<DiceMath>();
             buffs = GetComponent<PlayerBuffs>();
             health = GetComponent<PlayerHealth>();
             shooting = GetComponent<PlayerShooting>();
