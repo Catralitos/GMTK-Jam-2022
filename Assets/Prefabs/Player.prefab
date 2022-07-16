@@ -111,8 +111,8 @@ MonoBehaviour:
   mouseRotationSensitivity: -1.15
   controllerPushingSensitivity: 0.75
   controllerRotationSensitivity: 0
-  runSpeed: 2.5
-  speedBuffMultiplier: 2
+  runSpeed: 7
+  speedBuffMultiplier: 1.25
   angleOffset: -90
 --- !u!114 &8774992636248967532
 MonoBehaviour:
