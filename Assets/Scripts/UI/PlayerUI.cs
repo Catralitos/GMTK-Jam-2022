@@ -50,6 +50,11 @@ public class PlayerUI : MonoBehaviour
 
     private void Update()
     {
+        if (_player == null)
+        {
+            healthBar.fillAmount = 0;
+            return;
+        }
         //health
         healthBar.fillAmount = 1.0f * _player.health.hitsLeft / _player.health.playerHits;
 

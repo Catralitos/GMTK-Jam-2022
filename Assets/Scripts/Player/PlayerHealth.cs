@@ -1,7 +1,3 @@
-using System;
-using System.Security.Cryptography;
-using Audio;
-using Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +6,7 @@ namespace Player
     public class PlayerHealth : MonoBehaviour
     {
         public LayerMask damagers;
-        public GameObject explosionPrefab;
+        //public GameObject explosionPrefab;
 
         private PlayerMovement _playerMovement;
         private SpriteRenderer _renderer;
@@ -25,19 +21,18 @@ namespace Player
         {
             _playerMovement = GetComponent<PlayerMovement>();
             hitsLeft = playerHits;
-            //_renderer = GetComponent<SpriteRenderer>();
-            //_defaultMaterial = _renderer.material;
+            _renderer = GetComponent<SpriteRenderer>();
+            _defaultMaterial = _renderer.material;
         }
 
         public void DoDamage(int damage)
         {
-            if (_invincible /*|| TimeManager.Instance.gameEnded*/) return;
+            if (_invincible) return;
             if (hitsLeft > 1)
             {
                 //AudioManager.Instance.Play("PlayerHit");
-                hitsLeft= hitsLeft - damage;
-                //TimeManager.Instance.healthText.text = TimeManager.Instance.healthText.text.Substring(0, hitsLeft * 2);
-                //_renderer.material = hitMaterial;
+                hitsLeft -= damage;
+                _renderer.material = hitMaterial;
                 _invincible = true;
                 Invoke(nameof(RestoreVulnerability), invincibilityFrames * Time.deltaTime);
             }
@@ -51,15 +46,13 @@ namespace Player
         private void RestoreVulnerability()
         {
             _invincible = false;
-            //_renderer.material = _defaultMaterial;
+            _renderer.material = _defaultMaterial;
         }
 
         private void Die()
         {
-            //TimeManager.Instance.healthText.text = "";
             var spawnPos = gameObject.transform.position;
             //Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
-            //TimeManager.Instance.GoToDeathScreen();
             SceneManager.LoadScene(0);
             Destroy(gameObject);
         }
