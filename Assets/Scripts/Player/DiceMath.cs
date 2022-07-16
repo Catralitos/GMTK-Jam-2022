@@ -67,11 +67,11 @@ namespace Player
             {
                 if (i == index)
                 {
-                    _faceChances[i] += percentageIncrease;
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i]+ percentageIncrease, 0f, 1f);
                 }
                 else
                 {
-                    _faceChances[i] -= percentageIncrease / 5f;
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] - percentageIncrease / 5f, 0f, 1f);
                 }
             }
         }
