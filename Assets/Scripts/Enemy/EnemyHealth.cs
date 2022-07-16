@@ -13,11 +13,14 @@ public class EnemyHealth : MonoBehaviour
     public LayerMask bulletMask;
     public GameObject expPickup;
     public GameObject[] dropTable;
+    private bool isDead;
+
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = maxHealth;
+        isDead = false;
     }
 
     private void Update()
@@ -28,19 +31,18 @@ public class EnemyHealth : MonoBehaviour
     public void DoDamage(int damage){
         CurrentHealth -= damage;
         GetComponent<EnemyMovement>().TakeKnockback();
-        if (CurrentHealth <= 0)
+        if (CurrentHealth <= 0 && isDead == false)
         {
-            int expAux = exp;
+            isDead = true;
             //Destroying Enemy
-            Destroy(this.gameObject);
-            //while(expAux > 0){
-            Instantiate(expPickup, transform.position, transform.rotation);
-            //expAux = expAux/10; 
-            //}
+            expPickup = Instantiate(expPickup, transform.position, transform.rotation);
+            if(expPickup != null)
+                expPickup.GetComponent<ExpPickup>().set(exp);
             //PlayerEntity.Instance.progression.AddExperience(exp);
             int drop = Random.Range(-1, dropTable.Length);
             if (dropTable.Length != 0 && drop != -1)
                 Instantiate(dropTable[drop], transform.position, transform.rotation);
+            Destroy(this.gameObject);
         }
     }
         

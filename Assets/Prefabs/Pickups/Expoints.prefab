@@ -63,6 +63,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractorSpeed: 10
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2271955902367136949
 GameObject:
   m_ObjectHideFlags: 0
