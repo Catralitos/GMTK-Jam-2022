@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Bullets
 {
-    public class Bullet : MonoBehaviour
+    public class DiceBullet : MonoBehaviour
     {
         [HideInInspector] public bool knockbackBullet;
         [HideInInspector] public bool piercingBullet;
