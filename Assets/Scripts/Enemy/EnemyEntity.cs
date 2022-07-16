@@ -15,5 +15,7 @@ public class EnemyEntity : MonoBehaviour
         
     }
 
-
+    private void OnDestroy() {
+        EnemySpawner.instance.WarnDeath();
+    }
 }
