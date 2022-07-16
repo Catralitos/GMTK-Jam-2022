@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3de5197faa4dfd9ce76d7e1c330a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseBullets: 1
+  coneAngle: 60
   cooldown: 1
   cooldownLeft: 0
   bulletPrefab: {fileID: 3737490843885936421, guid: 64f2aed1a41f0c8448115af695c392f6, type: 3}
