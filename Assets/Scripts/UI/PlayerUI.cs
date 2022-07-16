@@ -1,5 +1,6 @@
 using Player;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -94,8 +95,9 @@ public class PlayerUI : MonoBehaviour
         fireCooldown.fillAmount = 1.0f - (_player.shooting.cooldownLeft / _player.shooting.cooldown);
     }
 
-    public void DisplayLevelUpUI()
+    public void DisplayLevelUpUI(int statsToLevelUp)
     {
+        levelUpScreen.GetComponent<LevelUpScreen>().statsToLevelUp = statsToLevelUp;
         levelUpScreen.SetActive(true);
     }
 }

@@ -8,6 +8,7 @@ namespace Player
         public float percentageGrowthFactor = 5;
         public float basePercentageChange = 0.05f;
         public int baseLevelExperience = 100;
+        public int statsToLevelUp = 3;
         [HideInInspector] public int currentBaseLevelExperience;
         [HideInInspector] public int currentExperience;
         [HideInInspector] public int currentLevel;
@@ -38,7 +39,7 @@ namespace Player
             currentBaseLevelExperience = experienceForNextLevel;
             experienceForNextLevel +=
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
-            PlayerUI.Instance.DisplayLevelUpUI();
+            PlayerUI.Instance.DisplayLevelUpUI(statsToLevelUp);
         }
 
         public void SetNewPercentageIncrease()
