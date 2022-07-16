@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2540229027985652780}
   - component: {fileID: 1701670002327419516}
   - component: {fileID: 6237400351747748594}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Expoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,6 +63,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractorSpeed: 10
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2271955902367136949
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +78,7 @@ GameObject:
   - component: {fileID: 2271955902367136951}
   - component: {fileID: 2271955902367136937}
   - component: {fileID: 4917334231515681170}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Exp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
