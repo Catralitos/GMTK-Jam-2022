@@ -39,7 +39,7 @@ public class BackgroundFollow : MonoBehaviour
         for (int i = 0; i < bgs.Count; i++)
         {   
             Vector2Int pos = BGPosition(i, centerPosition);
-            bgs[i].transform.position = new Vector3(pos.x * width, pos.y * height, 0);
+            bgs[i].transform.position = new Vector3(pos.x * width, pos.y * height, 10);
         }   
 
     }
