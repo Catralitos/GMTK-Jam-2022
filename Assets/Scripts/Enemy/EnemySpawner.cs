@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
     public float waveTime = 30;
     int waveBasePop;
     int currentMaxPop;
-    int wave = 1;
+    public int wave = 1;
     int population;
 
     [Header("Debug")]

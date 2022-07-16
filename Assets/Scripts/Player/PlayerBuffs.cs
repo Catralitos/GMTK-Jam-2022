@@ -9,6 +9,8 @@ namespace Player
         [HideInInspector] public int knockbackBulletsLeft;
         [HideInInspector] public int piercingBulletsLeft;
         [HideInInspector] public int superBulletsLeft;
+        //so para UI
+        [HideInInspector] public int speedBuffsLeft;
         [HideInInspector] public float speedBuffTimeLeft;
 
         [Header("Buff Values")] public int bulletsMultipliersPerDice;
@@ -23,6 +25,10 @@ namespace Player
         private void Update()
         {
             speedBuffTimeLeft = Mathf.Clamp(speedBuffTimeLeft - Time.deltaTime, 0, Single.PositiveInfinity);
+            if (Math.Abs(speedBuffTimeLeft) <= 0.01f)
+            {
+                speedBuffsLeft = 0;
+            }
         }
 
         public void ApplyBuff(int face)
@@ -32,6 +38,7 @@ namespace Player
             {
                 case 1:
                     speedBuffTimeLeft += speedBuffTimePerFace;
+                    speedBuffsLeft++;
                     //log.AddEvent("Rolled a 1! Increasing speed!");
                     break;
                 case 2:
