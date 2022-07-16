@@ -11,7 +11,8 @@
                     "id": "3e67139e-0b9a-4350-bec8-bc25401d685b",
                     "expectedControlType": "Stick",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Aim",
@@ -19,15 +20,8 @@
                     "id": "ecdd5417-3fc6-4664-a7d7-4ffe3f9f62a4",
                     "expectedControlType": "Stick",
                     "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Dash",
-                    "type": "Value",
-                    "id": "4dd21cac-710e-485c-bc14-76fa09a3b72a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -52,28 +46,6 @@
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "76274525-5376-4b26-bb10-2b8e7c4b6757",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7caad17b-e1cd-4fa3-8ec4-a19405d07798",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         },
@@ -87,15 +59,26 @@
                     "id": "fa5337e4-a3c9-44f2-8da2-4f9b6c1744a2",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
-                    "name": "Move",
+                    "name": "MoveVertical",
                     "type": "Button",
                     "id": "a3fa7ce2-74c9-4f32-8ffe-31af2e29938a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MoveHorizontal",
+                    "type": "Button",
+                    "id": "972fcc3a-533c-48be-afb0-bf262892f2dc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Aim",
@@ -103,15 +86,8 @@
                     "id": "43652344-751f-4829-bf62-a38a612a9dfd",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "a62b8299-5e5d-4dbf-ac6f-b704cff1a9a3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -133,7 +109,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveVertical",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -144,7 +120,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveVertical",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -155,29 +131,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "3f490150-370d-4954-8747-7173c69443ea",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "aa5eaf3d-43ab-453a-bb00-c5c0a0ad95db",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
+                    "action": "MoveVertical",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -193,15 +147,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "7dc0cbb6-1cad-452b-aefd-1bab391c8ba6",
-                    "path": "<Mouse>/rightButton",
+                    "name": "2D Vector",
+                    "id": "8e75ca82-2a96-4076-9346-521f7dbf51f7",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
+                    "action": "MoveHorizontal",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "1e0f6f56-0dae-434a-b2f7-d25f66ee4cb7",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "d04891f6-0164-4b37-ba4c-72ae2d525d78",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveHorizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
