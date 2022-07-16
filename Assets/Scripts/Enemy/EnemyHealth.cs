@@ -33,9 +33,9 @@ public class EnemyHealth : MonoBehaviour
             int expAux = exp;
             //Destroying Enemy
             Destroy(this.gameObject);
-            while(expAux > 0){
+            //while(expAux > 0){
             Instantiate(expPickup, transform.position, transform.rotation);
-            expAux = expAux/10; 
+            //expAux = expAux/10; 
             }
             //PlayerEntity.Instance.progression.AddExperience(exp);
             int drop = Random.Range(-1, dropTable.Length);

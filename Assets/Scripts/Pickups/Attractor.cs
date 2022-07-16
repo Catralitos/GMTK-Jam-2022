@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Player;
+using Extensions;
 
 public class Attractor : MonoBehaviour
 {
     public float AttractorSpeed;
+    public LayerMask playerMask;
 
     void OnTriggerStay2D(Collider2D col){
-        PlayerEntity player = col.gameObject.GetComponent<PlayerEntity>();
-        Debug.Log(player == null);
-        if (player){
+         if (playerMask.HasLayer(col.gameObject.layer))
+            {
             transform.position = Vector2.MoveTowards(transform.position, col.transform.position, AttractorSpeed * Time.deltaTime);
         }
     }
