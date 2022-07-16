@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Player;
 using TMPro;
@@ -57,7 +56,7 @@ namespace UI
             addToggles.Add(addToggle4);
             addToggles.Add(addToggle5);
             addToggles.Add(addToggle6);
-            
+
             minusToggle1.onValueChanged.AddListener(delegate { SubtractFromPercentage(1); });
             minusToggle2.onValueChanged.AddListener(delegate { SubtractFromPercentage(2); });
             minusToggle3.onValueChanged.AddListener(delegate { SubtractFromPercentage(3); });
@@ -71,7 +70,7 @@ namespace UI
             minusToggles.Add(minusToggle4);
             minusToggles.Add(minusToggle5);
             minusToggles.Add(minusToggle6);
-            
+
             confirmButton.onClick.AddListener(ConfirmButton);
         }
 
@@ -81,15 +80,17 @@ namespace UI
             levelUpText.text = "Please choose a side to change your odds by " +
                                (_player.progression.nextPercentageIncrease * 100);
             _currentPercentages = _player.dice.GetAllPercentages();
-            
+
             int[] indexes = { 0, 1, 2, 3, 4, 5 };
             List<int> shuffled = indexes.ToList();
-            for (int i = 0; i < shuffled.Count; i++) {
+            for (int i = 0; i < shuffled.Count; i++)
+            {
                 int temp = shuffled[i];
                 int randomIndex = Random.Range(i, shuffled.Count);
                 shuffled[i] = shuffled[randomIndex];
                 shuffled[randomIndex] = temp;
             }
+
             List<int> sublist = shuffled.GetRange(0, statsToLevelUp);
             for (int i = 0; i < addToggles.Count; i++)
             {
@@ -101,10 +102,23 @@ namespace UI
                 else
                 {
                     addToggles[i].gameObject.SetActive(true);
-                    minusToggles[i].gameObject.SetActive(true); 
+                    minusToggles[i].gameObject.SetActive(true);
                 }
             }
-            
+
+            for (int i = 0; i < addToggles.Count; i++)
+            {
+                if (_currentPercentages[i] + _player.progression.nextPercentageIncrease > 1)
+                {
+                    addToggles[i].gameObject.SetActive(false);
+                }
+
+                if (_currentPercentages[i] - _player.progression.nextPercentageIncrease < 0)
+                {
+                    minusToggles[i].gameObject.SetActive(false);
+                }
+            }
+
             Time.timeScale = 0;
             UpdateValues();
         }
@@ -149,7 +163,7 @@ namespace UI
         private void SubtractFromPercentage(int face)
         {
             _currentPercentages =
-                _player.dice.GetSpeculativeSubtracticePercentages(face,
+                _player.dice.GetSpeculativeSubtractivePercentages(face,
                     _player.progression.nextPercentageIncrease);
             _currentFace = face;
             _add = false;
@@ -177,7 +191,6 @@ namespace UI
 
             for (int i = 0; i < 6; i++)
             {
-
                 addToggles[i].isOn = false;
                 minusToggles[i].isOn = false;
             }
