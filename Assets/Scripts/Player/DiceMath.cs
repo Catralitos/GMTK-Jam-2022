@@ -15,7 +15,6 @@ namespace Player
         public int RollDice()
         {
             float roll = Random.Range(0f, 1f);
-            Debug.Log(roll);
             float sum = 0;
             if (roll <= _faceChances[0])
             {

@@ -25,7 +25,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        target = Player.PlayerEntity.Instance.gameObject;
+        if(Player.PlayerEntity.Instance != null)
+            target = Player.PlayerEntity.Instance.gameObject;
         rb = GetComponent<Rigidbody2D>();
         state = State.Pathfinding;
         currentDirection = GetVectorNormalizedToTarget();

@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
         if (bulletMask.HasLayer(col.gameObject.layer)){
+            Debug.Log("entrou");
             DiceBullet bullet = col.gameObject.GetComponent<DiceBullet>();
             CurrentHealth -= bullet.GetDamage();
             GetComponent<EnemyMovement>().TakeKnockback();
