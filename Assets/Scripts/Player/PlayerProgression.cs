@@ -6,6 +6,7 @@ namespace Player
     {
         public float levelGrowthFactor = 2;
         public int baseLevelExperience = 100;
+        [HideInInspector] public int currentBaseLevelExperience;
         [HideInInspector] public int currentExperience;
         [HideInInspector] public int currentLevel;
         [HideInInspector] public int experienceForNextLevel;
@@ -13,6 +14,7 @@ namespace Player
         private void Start()
         {
             currentLevel = 1;
+            currentBaseLevelExperience = 0;
             currentExperience = 0;
             experienceForNextLevel = baseLevelExperience;
         }
@@ -29,8 +31,10 @@ namespace Player
         private void LevelUp()
         {
             currentLevel++;
+            currentBaseLevelExperience = experienceForNextLevel;
             experienceForNextLevel =
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
+            //Time.timeScale = 0;
         }
     }
 }
