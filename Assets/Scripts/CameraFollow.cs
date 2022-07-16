@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public float horizontalLimit;
-    public float verticalLimit;
+    //public float horizontalLimit;
+    //public float verticalLimit;
 
     public Transform _player;
 
@@ -20,8 +20,8 @@ public class CameraFollow : MonoBehaviour
         var playerPosition = _player.position;
         var cameraTransform = transform;
         cameraTransform.position = new Vector3(
-            Mathf.Clamp(playerPosition.x, -horizontalLimit, horizontalLimit),
-            Mathf.Clamp(playerPosition.y, -verticalLimit, verticalLimit),
+            playerPosition.x,
+            playerPosition.y,
             cameraTransform.position.z);
     }
 }

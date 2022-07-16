@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 45030800}
   - component: {fileID: 45030801}
   m_Layer: 5
-  m_Name: SubtrackToggle
+  m_Name: PiecingSubtrackToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 112851211}
   - component: {fileID: 112851212}
   m_Layer: 5
-  m_Name: SubtrackToggle
+  m_Name: CooldownSubtrackToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 234208178}
   - component: {fileID: 234208179}
   m_Layer: 5
-  m_Name: SubtrackToggle
+  m_Name: KnockbackSubtrackToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 259073802}
   - component: {fileID: 259073803}
   m_Layer: 5
-  m_Name: AddToggle
+  m_Name: CooldownAddToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 361125874}
   - component: {fileID: 361125875}
   m_Layer: 5
-  m_Name: AddToggle
+  m_Name: PiecingAddToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 386094045}
   - component: {fileID: 386094046}
   m_Layer: 5
-  m_Name: SubtrackToggle
+  m_Name: DamageSubtrackToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1484,7 +1484,7 @@ GameObject:
   - component: {fileID: 525561028}
   - component: {fileID: 525561027}
   m_Layer: 5
-  m_Name: PercentageBar
+  m_Name: DamagePercentageBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 538799403}
   - component: {fileID: 538799404}
   m_Layer: 5
-  m_Name: SubtrackToggle
+  m_Name: MoveSpeedSubtrackToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2339,7 +2339,7 @@ GameObject:
   - component: {fileID: 688147461}
   - component: {fileID: 688147462}
   m_Layer: 5
-  m_Name: AddToggle
+  m_Name: KnockbackAddToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2503,7 +2503,7 @@ GameObject:
   - component: {fileID: 747549564}
   - component: {fileID: 747549563}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: MultiBulletIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2579,7 +2579,7 @@ GameObject:
   - component: {fileID: 770766304}
   - component: {fileID: 770766303}
   m_Layer: 5
-  m_Name: PercentageText
+  m_Name: CooldownPercentageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2713,7 +2713,7 @@ GameObject:
   - component: {fileID: 785182870}
   - component: {fileID: 785182871}
   m_Layer: 5
-  m_Name: AddToggle
+  m_Name: DamageAddToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2878,7 +2878,7 @@ GameObject:
   - component: {fileID: 820971151}
   - component: {fileID: 820971150}
   m_Layer: 5
-  m_Name: PercentageBar
+  m_Name: MultiBulletPercentageBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3112,7 +3112,7 @@ GameObject:
   - component: {fileID: 860326841}
   - component: {fileID: 860326840}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: MoveSpeedIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3322,7 +3322,7 @@ GameObject:
   - component: {fileID: 901697730}
   - component: {fileID: 901697731}
   m_Layer: 5
-  m_Name: SubtrackToggle
+  m_Name: MultiBulletSubtrackToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3410,7 +3410,7 @@ GameObject:
   - component: {fileID: 936141010}
   - component: {fileID: 936141009}
   m_Layer: 5
-  m_Name: PercentageBar
+  m_Name: PiecingPercentageBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3542,7 +3542,7 @@ GameObject:
   - component: {fileID: 952398913}
   - component: {fileID: 952398912}
   m_Layer: 5
-  m_Name: PercentageText
+  m_Name: DamagePercentageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3751,7 +3751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020527914}
   m_Layer: 5
-  m_Name: NockbackBuff
+  m_Name: KnockbackBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3947,7 +3947,7 @@ GameObject:
   - component: {fileID: 1088478086}
   - component: {fileID: 1088478085}
   m_Layer: 5
-  m_Name: PercentageText
+  m_Name: MoveSpeedPercentageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4216,7 +4216,7 @@ GameObject:
   - component: {fileID: 1111512031}
   - component: {fileID: 1111512032}
   m_Layer: 5
-  m_Name: AddToggle
+  m_Name: MoveSpeedAddToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4593,7 +4593,7 @@ GameObject:
   - component: {fileID: 1327187807}
   - component: {fileID: 1327187806}
   m_Layer: 5
-  m_Name: PercentageText
+  m_Name: PiecingPercentageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4939,7 +4939,7 @@ GameObject:
   - component: {fileID: 1444712036}
   - component: {fileID: 1444712035}
   m_Layer: 5
-  m_Name: PercentageBar
+  m_Name: KnockbackPercentageBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5362,7 +5362,7 @@ GameObject:
   - component: {fileID: 1536539706}
   - component: {fileID: 1536539705}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: CooldownIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5514,7 +5514,7 @@ GameObject:
   - component: {fileID: 1574714003}
   - component: {fileID: 1574714002}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: PiecingIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5643,20 +5643,18 @@ MonoBehaviour:
   - {fileID: 820971150}
   - {fileID: 1444712035}
   - {fileID: 936141009}
-  addButtons:
-  - {fileID: 1111512032}
-  - {fileID: 259073803}
-  - {fileID: 785182871}
-  - {fileID: 2117578167}
-  - {fileID: 688147462}
-  - {fileID: 361125875}
-  minusButtons:
-  - {fileID: 538799404}
-  - {fileID: 112851212}
-  - {fileID: 386094046}
-  - {fileID: 901697731}
-  - {fileID: 234208179}
-  - {fileID: 45030801}
+  addToggle1: {fileID: 1111512032}
+  addToggle2: {fileID: 259073803}
+  addToggle3: {fileID: 785182871}
+  addToggle4: {fileID: 2117578167}
+  addToggle5: {fileID: 688147462}
+  addToggle6: {fileID: 361125875}
+  minusToggle1: {fileID: 538799404}
+  minusToggle2: {fileID: 112851212}
+  minusToggle3: {fileID: 386094046}
+  minusToggle4: {fileID: 901697731}
+  minusToggle5: {fileID: 234208179}
+  minusToggle6: {fileID: 45030801}
   confirmButton: {fileID: 261381687}
 --- !u!1 &1629134550
 GameObject:
@@ -5746,7 +5744,7 @@ GameObject:
   - component: {fileID: 1629711134}
   - component: {fileID: 1629711133}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: DamageIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5898,7 +5896,7 @@ GameObject:
   - component: {fileID: 1663086550}
   - component: {fileID: 1663086549}
   m_Layer: 5
-  m_Name: PercentageText
+  m_Name: MultiBulletPercentageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6033,7 +6031,7 @@ GameObject:
   - component: {fileID: 1682713673}
   - component: {fileID: 1682713672}
   m_Layer: 5
-  m_Name: PercentageBar
+  m_Name: MoveSpeedPercentageBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6109,7 +6107,7 @@ GameObject:
   - component: {fileID: 1697178268}
   - component: {fileID: 1697178267}
   m_Layer: 5
-  m_Name: PercentageText
+  m_Name: KnockbackPercentageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6691,7 +6689,7 @@ GameObject:
   - component: {fileID: 1986529724}
   - component: {fileID: 1986529723}
   m_Layer: 5
-  m_Name: PercentageBar
+  m_Name: CooldownPercentageBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6885,7 +6883,7 @@ GameObject:
   - component: {fileID: 2039813318}
   - component: {fileID: 2039813317}
   m_Layer: 5
-  m_Name: Icon
+  m_Name: KnockbackIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7153,7 +7151,7 @@ GameObject:
   - component: {fileID: 2117578166}
   - component: {fileID: 2117578167}
   m_Layer: 5
-  m_Name: AddToggle
+  m_Name: MultiBulletAddToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
