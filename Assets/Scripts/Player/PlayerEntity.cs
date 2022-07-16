@@ -5,9 +5,10 @@ namespace Player
     public class PlayerEntity : MonoBehaviour
     {
         [HideInInspector] public DiceMath dice;
-        [HideInInspector] public PlayerMovement movement;
-        [HideInInspector] public PlayerHealth health;
         [HideInInspector] public PlayerBuffs buffs;
+        [HideInInspector] public PlayerHealth health;
+        [HideInInspector] public PlayerLog log;
+        [HideInInspector] public PlayerMovement movement;
         [HideInInspector] public PlayerProgression progression;
         [HideInInspector] public PlayerShooting shooting;
 
@@ -21,9 +22,10 @@ namespace Player
             dice = GetComponent<DiceMath>();
             buffs = GetComponent<PlayerBuffs>();
             health = GetComponent<PlayerHealth>();
+            log = GetComponent<PlayerLog>();
+            movement = GetComponent<PlayerMovement>();
             progression = GetComponent<PlayerProgression>();
             shooting = GetComponent<PlayerShooting>();
-            movement = GetComponent<PlayerMovement>();
         }
 
         #endregion
