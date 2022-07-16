@@ -25,23 +25,20 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D col){
-        if (bulletMask.HasLayer(col.gameObject.layer)){
-            Debug.Log("entrou");
-            DiceBullet bullet = col.gameObject.GetComponent<DiceBullet>();
-            CurrentHealth -= bullet.GetDamage();
-            GetComponent<EnemyMovement>().TakeKnockback();
-            if (CurrentHealth <= 0)
-            {
-                //Destroying Enemy
-                Destroy(this.gameObject);
-                PlayerEntity.Instance.progression.AddExperience(exp);
-                int drop = Random.Range(-1, dropTable.Length);
-                if (dropTable.Length != 0 && drop != -1)
-                    Instantiate(dropTable[drop], transform.position, transform.rotation);
-                }
-            }
+    public void DoDamage(int damage){
+        CurrentHealth -= damage;
+        GetComponent<EnemyMovement>().TakeKnockback();
+        if (CurrentHealth <= 0)
+        {
+            //Destroying Enemy
+            Destroy(this.gameObject);
+            PlayerEntity.Instance.progression.AddExperience(exp);
+            int drop = Random.Range(-1, dropTable.Length);
+            if (dropTable.Length != 0 && drop != -1)
+                Instantiate(dropTable[drop], transform.position, transform.rotation);
         }
+    }
+        
 
     /*public bool Damage(int damage, int attackId)
     {
