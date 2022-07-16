@@ -69,7 +69,7 @@ namespace Player
         {
             int index = face - 1;
             float actualPercentage = _faceChances[index] + percentageIncrease > 1
-                ? 1 - percentageIncrease
+                ? 1 - _faceChances[index]
                 : percentageIncrease;
             for (int i = 0; i < _faceChances.Length; i++)
             {
@@ -108,7 +108,7 @@ namespace Player
             float[] copy = new float[6];
             int index = face - 1;
             float actualPercentage = _faceChances[index] + percentageIncrease > 1
-                ? 1 - percentageIncrease
+                ? 1 - _faceChances[index]
                 : percentageIncrease;
             for (int i = 0; i < _faceChances.Length; i++)
             {
