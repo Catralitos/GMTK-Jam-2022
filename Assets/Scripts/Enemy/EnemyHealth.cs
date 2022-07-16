@@ -35,9 +35,8 @@ public class EnemyHealth : MonoBehaviour
         {
             isDead = true;
             //Destroying Enemy
-            expPickup = Instantiate(expPickup, transform.position, transform.rotation);
-            if(expPickup != null)
-                expPickup.GetComponent<ExpPickup>().set(exp);
+            GameObject exp_drop = Instantiate(expPickup, transform.position, transform.rotation) as GameObject;;
+            exp_drop.GetComponentInChildren<ExpPickup>().set(exp);
             //PlayerEntity.Instance.progression.AddExperience(exp);
             int drop = Random.Range(-1, dropTable.Length);
             if (dropTable.Length != 0 && drop != -1)
