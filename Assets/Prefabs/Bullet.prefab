@@ -102,7 +102,7 @@ MonoBehaviour:
   knockbackBullet: 0
   piercingBullet: 0
   superBullet: 0
-  lifeSpan: 5
+  lifeSpan: 0.5
   enemies:
     serializedVersion: 2
     m_Bits: 64
