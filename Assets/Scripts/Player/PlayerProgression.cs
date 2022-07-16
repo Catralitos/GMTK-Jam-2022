@@ -36,7 +36,7 @@ namespace Player
         {
             currentLevel++;
             currentBaseLevelExperience = experienceForNextLevel;
-            experienceForNextLevel =
+            experienceForNextLevel +=
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
             PlayerUI.Instance.DisplayLevelUpUI();
         }
