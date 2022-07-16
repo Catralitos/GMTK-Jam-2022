@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2550271607177026125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2550271607177026120}
+  - component: {fileID: 2550271607177026127}
+  - component: {fileID: 2550271607177026126}
+  m_Layer: 0
+  m_Name: InLevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2550271607177026120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550271607177026125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.631124, y: 16.964962, z: -9.902464}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2550271607177026127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550271607177026125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4f1a4a7538d6e4f9dcda3728018c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 8343504788663545201, guid: ac95fcbc3925d104c83bdb37d50ed313, type: 3}
+--- !u!114 &2550271607177026126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550271607177026125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6753164b99177349bec48a0c66df1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - type: {fileID: 9196164412010791829, guid: 262efde9ce2e532428ff0b751a41fdf5, type: 3}
+    spawnRate: 20
+  - type: {fileID: 4504868501348967166, guid: 432799e252de9ea42b4089536b5d43e2, type: 3}
+    spawnRate: 5
+  - type: {fileID: 4504868501348967166, guid: c02a1d318f4ccc8488985150029b7fe6, type: 3}
+    spawnRate: 10
+  spawnOffset: 12.07
+  cooldown: 0.7
+  hardCap: 1000
+  baseValue: 10
+  growthFactor: 0.02
+  waveTime: 45
+  waveCooldown: 10
+  wave: 1
+  text: {fileID: 0}

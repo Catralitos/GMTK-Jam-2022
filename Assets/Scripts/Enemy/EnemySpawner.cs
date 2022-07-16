@@ -148,6 +148,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SetDebugUI() {
+        if(text == null) return;
         text.text = "Wave: " + wave + "\nTime: " + timeSinceWaveStart.ToString("00.00") + "\nMax Pop: " + currentMaxPop;
     }
 }
