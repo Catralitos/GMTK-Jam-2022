@@ -29,19 +29,13 @@ namespace Player
             _defaultMaterial = _renderer.material;
         }
 
-        private void OnCollisionStay2D(Collision2D other)
-        {
-            if (!damagers.HasLayer(other.gameObject.layer)) return;
-            DoDamage();
-        }
-
-        public void DoDamage()
+        public void DoDamage(int damage)
         {
             if (_invincible /*|| TimeManager.Instance.gameEnded*/) return;
             if (hitsLeft > 1)
             {
                 AudioManager.Instance.Play("PlayerHit");
-                hitsLeft--;
+                hitsLeft= hitsLeft - damage;
                 //TimeManager.Instance.healthText.text = TimeManager.Instance.healthText.text.Substring(0, hitsLeft * 2);
                 _renderer.material = hitMaterial;
                 _invincible = true;

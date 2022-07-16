@@ -9,11 +9,6 @@ public class EnemyHealth : MonoBehaviour
 
     public GameObject[] dropTable;
 
-
-    private int lastHitId = -1;
-    private static int killCounter = 0;
-    public static int maxKillCount = 3;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +20,24 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    public bool Damage(int damage, int attackId)
+    void OnTriggerStay2D(Collider2D collision){
+        Bullets.DiceBullet bullet = collision.gameObject.GetComponent<Bullets.DiceBullet>();
+        if (bullet)
+        {
+            CurrentHealth -= bullet.GetDamage();
+            GetComponent<EnemyMovement>().TakeKnockback();
+            if (CurrentHealth <= 0)
+            {
+                //Destroying Enemy
+                Destroy(this.gameObject);
+                int drop = Random.Range(-1, dropTable.Length);
+                if (dropTable.Length != 0 && drop != -1)
+                    Instantiate(dropTable[drop], transform.position, transform.rotation);
+                }
+            }
+        }
+
+    /*public bool Damage(int damage, int attackId)
     {
         if (attackId != lastHitId)
         {
@@ -49,4 +61,5 @@ public class EnemyHealth : MonoBehaviour
         }
         return false;
     }
+    */
 }
