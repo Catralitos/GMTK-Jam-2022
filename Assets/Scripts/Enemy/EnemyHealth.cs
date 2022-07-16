@@ -36,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
             //while(expAux > 0){
             Instantiate(expPickup, transform.position, transform.rotation);
             //expAux = expAux/10; 
-            }
+            //}
             //PlayerEntity.Instance.progression.AddExperience(exp);
             int drop = Random.Range(-1, dropTable.Length);
             if (dropTable.Length != 0 && drop != -1)
