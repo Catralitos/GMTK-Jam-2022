@@ -76,9 +76,9 @@ namespace Player
             }
         }
 
-        public int GetFacePercentage(int face)
+        public float GetFacePercentage(int face)
         {
-            return Mathf.RoundToInt(_faceChances[face - 1] * 100);
+            return _faceChances[face - 1] * 100;
         }
     }
 }
