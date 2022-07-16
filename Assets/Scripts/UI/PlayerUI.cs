@@ -94,7 +94,7 @@ public class PlayerUI : MonoBehaviour
         //cooldowns
         speedBuffCooldown.fillAmount = _player.buffs.speedBuffTimeLeft /
                                        (_player.buffs.speedBuffTimePerFace * _player.buffs.speedBuffsLeft);
-        fireCooldown.fillAmount = _player.shooting.cooldownLeft / _player.shooting.cooldown;
+        fireCooldown.fillAmount = 1.0f - (_player.shooting.cooldownLeft / _player.shooting.cooldown);
     }
 
     public void DisplayLevelUpUI()
