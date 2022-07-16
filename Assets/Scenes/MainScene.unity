@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824663586, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 824663588, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.25872195
+      objectReference: {fileID: 0}
+    - target: {fileID: 824663588, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.25872195
+      objectReference: {fileID: 0}
+    - target: {fileID: 824663588, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 1619540116, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1842106846388188195, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 14.500061
@@ -392,8 +412,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: waveTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
       propertyPath: spawnOffset
       value: 16.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: growthFactor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: waveCooldown
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
       propertyPath: enemies.Array.data[2].spawnRate
@@ -769,6 +801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2471169956689471708, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
+      propertyPath: stackableBuffs
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8774992636248967504, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: m_Name
       value: Player
