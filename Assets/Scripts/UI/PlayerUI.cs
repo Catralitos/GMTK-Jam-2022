@@ -41,7 +41,7 @@ public class PlayerUI : MonoBehaviour
     }
 
     #endregion
-    
+
     private void Start()
     {
         _player = PlayerEntity.Instance;
@@ -56,27 +56,23 @@ public class PlayerUI : MonoBehaviour
         superBulletCounter.text = "X " + _player.buffs.superBulletsLeft;
         superBulletIcon.color =
             _player.buffs.superBulletsLeft == 0
-                ? superBulletIcon.color = Color.gray
-                : superBulletIcon.color =
-                    Color.white;
+                ? Color.gray
+                : Color.white;
         multiBulletCounter.text = "X " + _player.buffs.bulletsMultipliersLeft;
         multiBulletIcon.color =
-            _player.buffs.superBulletsLeft == 0
-                ? multiBulletIcon.color = Color.gray
-                : multiBulletIcon.color =
-                    Color.white;
+            _player.buffs.bulletsMultipliersLeft == 0
+                ? Color.gray
+                : Color.white;
         knockbackBulletCounter.text = "X " + _player.buffs.knockbackBulletsLeft;
         knockbackBulletIcon.color =
-            _player.buffs.superBulletsLeft == 0
-                ? knockbackBulletIcon.color = Color.gray
-                : knockbackBulletIcon.color =
-                    Color.white;
+            _player.buffs.knockbackBulletsLeft == 0
+                ? Color.gray
+                : Color.white;
         piercingBulletCounter.text = "X " + _player.buffs.piercingBulletsLeft;
         piercingBulletIcon.color =
-            _player.buffs.superBulletsLeft == 0
-                ? piercingBulletIcon.color = Color.gray
-                : piercingBulletIcon.color =
-                    Color.white;
+            _player.buffs.piercingBulletsLeft == 0
+                ? Color.gray
+                : Color.white;
 
         //exp
         experienceBar.fillAmount = 1.0f *
@@ -92,8 +88,10 @@ public class PlayerUI : MonoBehaviour
         levelText.text = "Level " + _player.progression.currentLevel;
 
         //cooldowns
-        speedBuffCooldown.fillAmount = _player.buffs.speedBuffTimeLeft /
-                                       (_player.buffs.speedBuffTimePerFace * _player.buffs.speedBuffsLeft);
+        speedBuffCooldown.fillAmount = _player.buffs.speedBuffsLeft == 0 || _player.buffs.speedBuffTimeLeft <= 0.0f
+            ? 0
+            : _player.buffs.speedBuffTimeLeft /
+              (_player.buffs.speedBuffTimePerFace * _player.buffs.speedBuffsLeft);
         fireCooldown.fillAmount = 1.0f - (_player.shooting.cooldownLeft / _player.shooting.cooldown);
     }
 
