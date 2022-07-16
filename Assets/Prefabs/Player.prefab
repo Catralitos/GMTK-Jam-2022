@@ -17,7 +17,9 @@ GameObject:
   - component: {fileID: 2471169956689471708}
   - component: {fileID: 8774992636248967534}
   - component: {fileID: 8774992636248967533}
-  m_Layer: 0
+  - component: {fileID: 8494799382279544294}
+  - component: {fileID: 8494799382279544303}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0127bdb7f46e64e9185f8187a97b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseControl: 0
+  mouseControl: 1
   mouseRotationSensitivity: -1.15
   controllerPushingSensitivity: 0.75
   controllerRotationSensitivity: 0
@@ -160,11 +162,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelGrowthFactor: 2
+  percentageGrowthFactor: 2
+  basePercentageChange: 0.05
   baseLevelExperience: 100
   currentBaseLevelExperience: 0
   currentExperience: 0
   currentLevel: 0
   experienceForNextLevel: 0
+  nextPercentageIncrease: 0
 --- !u!114 &2471169956689471708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +233,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &8494799382279544294
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774992636248967504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0022786856}
+  serializedVersion: 2
+  m_Radius: 0.4977213
+--- !u!114 &8494799382279544303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774992636248967504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3226b4ef74f6e74479e8d9ca24341ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8774992636881772501
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8774992636881772502}
   - component: {fileID: 8774992636881772503}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
