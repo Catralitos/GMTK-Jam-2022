@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -25,11 +26,33 @@ public class EnemySpawner : MonoBehaviour
     public float cooldown;
     float onCooldownTime;
 
-    public int maxPopulation;
+    float timeSinceWaveStart = 0;
+
+    [Header("Population Curve Parameters")]
+    public int hardCap;
+    public int baseValue;
+    public float growthFactor;
+    public float waveTime = 30;
+    int waveBasePop;
+    int currentMaxPop;
+    int wave = 1;
     int population;
+
+    [Header("Debug")]
+    public TMP_Text text;
+
+    void Start() {
+        waveBasePop = baseValue;   
+    }
 
     void Update()
     {
+        timeSinceWaveStart += Time.deltaTime;
+        if(timeSinceWaveStart > waveTime) {
+            ChangeWave();
+        }
+        SetMaxPopulation();
+        SetDebugUI();
         if(onCooldownTime <= 0) {
             if(OverPopulated()) return;
             DoSpawnCycle();
@@ -82,16 +105,32 @@ public class EnemySpawner : MonoBehaviour
     }
 
     bool OverPopulated() {
-        return population >= maxPopulation;
+        return population >= currentMaxPop || population > hardCap;
     }
 
     public void WarnDeath() {
         population--;
     }
 
+    void ChangeWave() {
+        timeSinceWaveStart = 0;
+        wave++;
+        waveBasePop = currentMaxPop;
+    }
+
+    void SetMaxPopulation() {
+        float v = Mathf.Floor(Mathf.Log10(timeSinceWaveStart + 1));
+        v = Mathf.Floor(100/((-0.75f * timeSinceWaveStart) + 35) - 2.85f);
+        v = timeSinceWaveStart*timeSinceWaveStart;
+        currentMaxPop = (int)Mathf.Floor(waveBasePop + v*growthFactor);
+    }
 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(Camera.main.transform.position, spawnOffset);
+    }
+
+    void SetDebugUI() {
+        text.text = "Wave: " + wave + "\nTime: " + timeSinceWaveStart.ToString("00.00") + "\nMax Pop: " + currentMaxPop;
     }
 }
