@@ -12,7 +12,6 @@ namespace Player
         public LayerMask damagers;
         public GameObject explosionPrefab;
 
-
         private PlayerMovement _playerMovement;
         private SpriteRenderer _renderer;
         private Material _defaultMaterial;
@@ -38,7 +37,7 @@ namespace Player
 
         public void DoDamage()
         {
-            if (_invincible || _playerMovement.dashing /*|| TimeManager.Instance.gameEnded*/) return;
+            if (_invincible /*|| TimeManager.Instance.gameEnded*/) return;
             if (hitsLeft > 1)
             {
                 AudioManager.Instance.Play("PlayerHit");

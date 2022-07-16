@@ -44,15 +44,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Dash"",
-                    ""type"": ""Value"",
-                    ""id"": ""4dd21cac-710e-485c-bc14-76fa09a3b72a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -77,28 +68,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""76274525-5376-4b26-bb10-2b8e7c4b6757"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7caad17b-e1cd-4fa3-8ec4-a19405d07798"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -116,9 +85,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""MoveVertical"",
                     ""type"": ""Button"",
                     ""id"": ""a3fa7ce2-74c9-4f32-8ffe-31af2e29938a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveHorizontal"",
+                    ""type"": ""Button"",
+                    ""id"": ""972fcc3a-533c-48be-afb0-bf262892f2dc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -132,15 +110,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Dash"",
-                    ""type"": ""Button"",
-                    ""id"": ""a62b8299-5e5d-4dbf-ac6f-b704cff1a9a3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -162,7 +131,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveVertical"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -173,7 +142,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveVertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -184,29 +153,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""3f490150-370d-4954-8747-7173c69443ea"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""aa5eaf3d-43ab-453a-bb00-c5c0a0ad95db"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""MoveVertical"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -222,15 +169,37 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""7dc0cbb6-1cad-452b-aefd-1bab391c8ba6"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""8e75ca82-2a96-4076-9346-521f7dbf51f7"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
-                    ""isComposite"": false,
+                    ""action"": ""MoveHorizontal"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""1e0f6f56-0dae-434a-b2f7-d25f66ee4cb7"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveHorizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""d04891f6-0164-4b37-ba4c-72ae2d525d78"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveHorizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -241,13 +210,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_ControllerGameplay = asset.FindActionMap("ControllerGameplay", throwIfNotFound: true);
         m_ControllerGameplay_Move = m_ControllerGameplay.FindAction("Move", throwIfNotFound: true);
         m_ControllerGameplay_Aim = m_ControllerGameplay.FindAction("Aim", throwIfNotFound: true);
-        m_ControllerGameplay_Dash = m_ControllerGameplay.FindAction("Dash", throwIfNotFound: true);
         // KeyboardGameplay
         m_KeyboardGameplay = asset.FindActionMap("KeyboardGameplay", throwIfNotFound: true);
         m_KeyboardGameplay_Fire = m_KeyboardGameplay.FindAction("Fire", throwIfNotFound: true);
-        m_KeyboardGameplay_Move = m_KeyboardGameplay.FindAction("Move", throwIfNotFound: true);
+        m_KeyboardGameplay_MoveVertical = m_KeyboardGameplay.FindAction("MoveVertical", throwIfNotFound: true);
+        m_KeyboardGameplay_MoveHorizontal = m_KeyboardGameplay.FindAction("MoveHorizontal", throwIfNotFound: true);
         m_KeyboardGameplay_Aim = m_KeyboardGameplay.FindAction("Aim", throwIfNotFound: true);
-        m_KeyboardGameplay_Dash = m_KeyboardGameplay.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -309,14 +277,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IControllerGameplayActions m_ControllerGameplayActionsCallbackInterface;
     private readonly InputAction m_ControllerGameplay_Move;
     private readonly InputAction m_ControllerGameplay_Aim;
-    private readonly InputAction m_ControllerGameplay_Dash;
     public struct ControllerGameplayActions
     {
         private @PlayerControls m_Wrapper;
         public ControllerGameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_ControllerGameplay_Move;
         public InputAction @Aim => m_Wrapper.m_ControllerGameplay_Aim;
-        public InputAction @Dash => m_Wrapper.m_ControllerGameplay_Dash;
         public InputActionMap Get() { return m_Wrapper.m_ControllerGameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -332,9 +298,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Aim.started -= m_Wrapper.m_ControllerGameplayActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_ControllerGameplayActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_ControllerGameplayActionsCallbackInterface.OnAim;
-                @Dash.started -= m_Wrapper.m_ControllerGameplayActionsCallbackInterface.OnDash;
-                @Dash.performed -= m_Wrapper.m_ControllerGameplayActionsCallbackInterface.OnDash;
-                @Dash.canceled -= m_Wrapper.m_ControllerGameplayActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_ControllerGameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -345,9 +308,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
-                @Dash.started += instance.OnDash;
-                @Dash.performed += instance.OnDash;
-                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -357,17 +317,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_KeyboardGameplay;
     private IKeyboardGameplayActions m_KeyboardGameplayActionsCallbackInterface;
     private readonly InputAction m_KeyboardGameplay_Fire;
-    private readonly InputAction m_KeyboardGameplay_Move;
+    private readonly InputAction m_KeyboardGameplay_MoveVertical;
+    private readonly InputAction m_KeyboardGameplay_MoveHorizontal;
     private readonly InputAction m_KeyboardGameplay_Aim;
-    private readonly InputAction m_KeyboardGameplay_Dash;
     public struct KeyboardGameplayActions
     {
         private @PlayerControls m_Wrapper;
         public KeyboardGameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Fire => m_Wrapper.m_KeyboardGameplay_Fire;
-        public InputAction @Move => m_Wrapper.m_KeyboardGameplay_Move;
+        public InputAction @MoveVertical => m_Wrapper.m_KeyboardGameplay_MoveVertical;
+        public InputAction @MoveHorizontal => m_Wrapper.m_KeyboardGameplay_MoveHorizontal;
         public InputAction @Aim => m_Wrapper.m_KeyboardGameplay_Aim;
-        public InputAction @Dash => m_Wrapper.m_KeyboardGameplay_Dash;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardGameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -380,15 +340,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire.started -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnFire;
-                @Move.started -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMove;
+                @MoveVertical.started -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMoveVertical;
+                @MoveVertical.performed -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMoveVertical;
+                @MoveVertical.canceled -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMoveVertical;
+                @MoveHorizontal.started -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMoveHorizontal;
+                @MoveHorizontal.performed -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMoveHorizontal;
+                @MoveHorizontal.canceled -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnMoveHorizontal;
                 @Aim.started -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnAim;
-                @Dash.started -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnDash;
-                @Dash.performed -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnDash;
-                @Dash.canceled -= m_Wrapper.m_KeyboardGameplayActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_KeyboardGameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -396,15 +356,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
+                @MoveVertical.started += instance.OnMoveVertical;
+                @MoveVertical.performed += instance.OnMoveVertical;
+                @MoveVertical.canceled += instance.OnMoveVertical;
+                @MoveHorizontal.started += instance.OnMoveHorizontal;
+                @MoveHorizontal.performed += instance.OnMoveHorizontal;
+                @MoveHorizontal.canceled += instance.OnMoveHorizontal;
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
-                @Dash.started += instance.OnDash;
-                @Dash.performed += instance.OnDash;
-                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -413,13 +373,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
-        void OnDash(InputAction.CallbackContext context);
     }
     public interface IKeyboardGameplayActions
     {
         void OnFire(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
+        void OnMoveVertical(InputAction.CallbackContext context);
+        void OnMoveHorizontal(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
-        void OnDash(InputAction.CallbackContext context);
     }
 }
