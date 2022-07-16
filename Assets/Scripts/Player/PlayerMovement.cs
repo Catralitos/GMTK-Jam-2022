@@ -14,6 +14,7 @@ namespace Player
         public float controllerRotationSensitivity = 1.15f;
 
         public float runSpeed = 20.0f;
+        public float speedBuffMultiplier = 2.0f;
         public int angleOffset = -90;
 
         private Animator _animator;
@@ -91,13 +92,16 @@ namespace Player
 
         private void FixedUpdate()
         {
+            float actualMoveSpeed = PlayerEntity.Instance.buffs.speedBuffTimeLeft > 0
+                ? runSpeed * speedBuffMultiplier
+                : runSpeed;
             if (mouseControl)
             {
-                _body.velocity = (_moveV + _moveH) * runSpeed;
+                _body.velocity = (_moveV + _moveH) * actualMoveSpeed;
             } 
             else
             {
-                _body.velocity = _move * runSpeed;
+                _body.velocity = _move * actualMoveSpeed;
             }
             
         }

@@ -16,6 +16,7 @@ namespace Bullets
         //public GameObject explosionPrefab;
 
         public int bulletDamage = 1;
+        public float superBulletDamageMultiplier;
         public float bulletSpeed = 20.0f;
 
         private float _timeLeft;
@@ -38,6 +39,11 @@ namespace Bullets
             if (_timeLeft <= 0) Destroy(gameObject);
         }
 
+        public int GetDamage()
+        {
+            return Mathf.RoundToInt(superBullet ? bulletDamage * superBulletDamageMultiplier : bulletDamage);
+        }
+
         //so para balas inimigas
         private void OnCollisionEnter2D(Collision2D col)
         {
@@ -45,6 +51,10 @@ namespace Bullets
             if (enemies.HasLayer(col.gameObject.layer))
             {
                 PlayerEntity.Instance.buffs.ApplyBuff(PlayerEntity.Instance.dice.RollDice());
+                if (!piercingBullet)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

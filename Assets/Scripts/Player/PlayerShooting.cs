@@ -1,3 +1,4 @@
+using Bullets;
 using UnityEngine;
 
 namespace Player
@@ -13,7 +14,7 @@ namespace Player
         public Transform firePoint;
 
         private bool _canShoot = true;
-        
+
         private void Start()
         {
             //plus2 = 0;
@@ -29,7 +30,30 @@ namespace Player
         {
             if (!_canShoot) return;
             var gunPosition = firePoint.position;
-            Instantiate(bulletPrefab, gunPosition, firePoint.rotation);
+            GameObject instantiatedBullet = Instantiate(bulletPrefab, gunPosition, firePoint.rotation);
+            DiceBullet diceBullet = instantiatedBullet.GetComponent<DiceBullet>();
+
+            //apply buffs
+            PlayerBuffs buffs = PlayerEntity.Instance.buffs;
+
+            if (buffs.piercingBulletsLeft > 0)
+            {
+                diceBullet.piercingBullet = true;
+                buffs.piercingBulletsLeft--;
+            }
+
+            if (buffs.superBulletsLeft > 0)
+            {
+                diceBullet.superBullet = true;
+                buffs.superBulletsLeft--;
+            }
+
+            if (buffs.knockbackBulletsLeft > 0)
+            {
+                diceBullet.knockbackBullet = true;
+                buffs.knockbackBulletsLeft--;
+            }
+
             /*for (var i = 0; i < plus2; i++)
             {
                 var angles = firePoint.rotation.eulerAngles;
