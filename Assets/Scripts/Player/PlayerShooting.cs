@@ -34,7 +34,7 @@ namespace Player
 
             if (buffs.bulletsMultipliersLeft > 0)
             {
-                bulletsToSpawn *= 2;
+                bulletsToSpawn += 2;
                 buffs.bulletsMultipliersLeft--;
             }
 
