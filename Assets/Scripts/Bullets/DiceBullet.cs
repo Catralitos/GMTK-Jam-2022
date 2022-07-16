@@ -19,16 +19,16 @@ namespace Bullets
         public float bulletSpeed = 20.0f;
 
         private float _timeLeft;
-        protected Rigidbody2D Body;
+        private Rigidbody2D _body;
 
         private void Awake()
         {
-            Body = GetComponent<Rigidbody2D>();
+            _body = GetComponent<Rigidbody2D>();
         }
 
         private void Start()
         {
-            Body.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
+            _body.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
             _timeLeft = lifeSpan;
         }
 
