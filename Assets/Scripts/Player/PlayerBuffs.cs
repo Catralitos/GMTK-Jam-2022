@@ -8,10 +8,14 @@ namespace Player
         [HideInInspector] public int bulletsMultipliersLeft = 0;
         [HideInInspector] public int knockbackBulletsLeft = 0;
         [HideInInspector] public int piercingBulletsLeft = 0;
+
         [HideInInspector] public int superBulletsLeft = 0;
+
         //so para UI
         [HideInInspector] public int speedBuffsLeft = 0;
         [HideInInspector] public float speedBuffTimeLeft = 0;
+
+        public bool stackableBuffs;
 
         [Header("Buff Values")] public int bulletsMultipliersPerDice;
         public int knockbackBulletsPerDice;
@@ -35,8 +39,19 @@ namespace Player
             switch (face)
             {
                 case 1:
-                    speedBuffTimeLeft += speedBuffTimePerFace;
-                    speedBuffsLeft++;
+                    if (stackableBuffs)
+                    {
+                        speedBuffTimeLeft += speedBuffTimePerFace;
+                        speedBuffsLeft++;
+                    }
+                    else
+                    {
+                        if (speedBuffTimeLeft <= 0.01f)
+                        {
+                            speedBuffTimeLeft = speedBuffTimePerFace;
+                        }
+                    }
+
                     //log.AddEvent("Rolled a 1! Increasing speed!");
                     break;
                 case 2:
@@ -44,19 +59,51 @@ namespace Player
                     //log.AddEvent("Rolled a 2! Decreasing next bullet's firing cooldown!");
                     break;
                 case 3:
-                    superBulletsLeft += superBulletsPerDice;
+                    if (stackableBuffs)
+                    {
+                        superBulletsLeft += superBulletsPerDice;
+                    }
+                    else
+                    {
+                        superBulletsLeft = Math.Clamp(superBulletsLeft + superBulletsPerDice, 0, 1);
+                    }
+
                     //log.AddEvent("Rolled a 3! Increasing next bullet damage!");
                     break;
                 case 4:
-                    bulletsMultipliersLeft += bulletsMultipliersPerDice;
+                    if (stackableBuffs)
+                    {
+                        bulletsMultipliersLeft += bulletsMultipliersPerDice;
+                    }
+                    else
+                    {
+                        bulletsMultipliersLeft = Math.Clamp(bulletsMultipliersLeft + bulletsMultipliersPerDice, 0, 1);
+                    }
+
                     //log.AddEvent("Rolled a 4! Increasing next shot's nº of bullets!");
                     break;
                 case 5:
-                    knockbackBulletsLeft += knockbackBulletsPerDice;
+                    if (stackableBuffs)
+                    {
+                        knockbackBulletsLeft += knockbackBulletsPerDice;
+                    }
+                    else
+                    {
+                        knockbackBulletsLeft = Math.Clamp(knockbackBulletsLeft + knockbackBulletsPerDice, 0, 1);
+                    }
+
                     //log.AddEvent("Rolled a 5! Increasing next bullet's knockback!");
                     break;
                 case 6:
-                    piercingBulletsLeft += piercingBulletsPerDice;
+                    if (stackableBuffs)
+                    {
+                        piercingBulletsLeft += piercingBulletsPerDice;
+                    }
+                    else
+                    {
+                        piercingBulletsLeft = Math.Clamp(piercingBulletsLeft + piercingBulletsPerDice, 0, 1);
+                    }
+
                     //log.AddEvent("Rolled a 6! Making next bullet pierce enemies!");
                     break;
             }
