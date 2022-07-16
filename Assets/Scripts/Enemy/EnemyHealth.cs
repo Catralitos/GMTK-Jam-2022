@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-
+        if(Vector3.Distance(transform.position, Camera.main.transform.position) > 20) Destroy(this.gameObject);
     }
 
     public void DoDamage(int damage){
