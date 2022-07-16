@@ -10,7 +10,7 @@ namespace Player
         [HideInInspector] public int currentExperience;
         [HideInInspector] public int currentLevel;
         [HideInInspector] public int experienceForNextLevel;
-
+        [HideInInspector] public float nextPercentageIncrease;
         private void Start()
         {
             currentLevel = 1;
@@ -34,7 +34,12 @@ namespace Player
             currentBaseLevelExperience = experienceForNextLevel;
             experienceForNextLevel =
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
-            //Time.timeScale = 0;
+            PlayerUI.Instance.DisplayLevelUpUI();
+        }
+
+        public void SetNewPercentageIncrease()
+        {
+            //TODO meter quanta percentagem mexes com nivel
         }
     }
 }

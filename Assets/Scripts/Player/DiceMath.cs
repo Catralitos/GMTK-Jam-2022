@@ -22,7 +22,7 @@ namespace Player
             }
 
             sum += _faceChances[0];
-            
+
             if (roll > sum && (sum + roll) <= _faceChances[1])
             {
                 return 2;
@@ -30,19 +30,19 @@ namespace Player
 
             sum += _faceChances[1];
 
-            
+
             if (roll > sum && (sum + roll) <= _faceChances[2])
             {
                 return 3;
             }
-            
+
             sum += _faceChances[2];
 
             if (roll > sum && (sum + roll) <= _faceChances[3])
             {
                 return 4;
             }
-            
+
             sum += _faceChances[3];
 
             if (roll > sum && (sum + roll) <= _faceChances[4])
@@ -51,7 +51,7 @@ namespace Player
             }
 
             sum += _faceChances[4];
-            
+
             if (roll > sum && (sum + roll) <= _faceChances[5])
             {
                 return 6;
@@ -60,20 +60,85 @@ namespace Player
             return -1;
         }
 
-        public void ChangePercentage(int face, float percentageIncrease)
+        public void AddPercentage(int face, float percentageIncrease)
         {
             int index = face - 1;
             for (int i = 0; i < _faceChances.Length; i++)
             {
                 if (i == index)
                 {
-                    _faceChances[i] = Mathf.Clamp(_faceChances[i]+ percentageIncrease, 0f, 1f);
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] + percentageIncrease, 0f, 1f);
                 }
                 else
                 {
                     _faceChances[i] = Mathf.Clamp(_faceChances[i] - percentageIncrease / 5f, 0f, 1f);
                 }
             }
+        }
+        
+        public void SubtractPercentage(int face, float percentageDecrease)
+        {
+            int index = face - 1;
+            for (int i = 0; i < _faceChances.Length; i++)
+            {
+                if (i == index)
+                {
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] - percentageDecrease, 0f, 1f);
+                }
+                else
+                {
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] + percentageDecrease / 5f, 0f, 1f);
+                }
+            }
+        }
+
+        public float[] GetSpeculativeAdditivePercentages(int face, float percentageIncrease)
+        {
+            float[] copy = new float[6];
+            int index = face - 1;
+            for (int i = 0; i < _faceChances.Length; i++)
+            {
+                if (i == index)
+                {
+                    copy[i] = Mathf.Clamp(_faceChances[i] + percentageIncrease, 0f, 1f);
+                }
+                else
+                {
+                    copy[i] = Mathf.Clamp(_faceChances[i] - percentageIncrease / 5f, 0f, 1f);
+                }
+            }
+
+            return copy;
+        }
+        
+        public float[] GetSpeculativeSubtracticePercentages(int face, float percentageDecrease)
+        {
+            float[] copy = new float[6];
+            int index = face - 1;
+            for (int i = 0; i < _faceChances.Length; i++)
+            {
+                if (i == index)
+                {
+                    copy[i] = Mathf.Clamp(_faceChances[i] - percentageDecrease, 0f, 1f);
+                }
+                else
+                {
+                    copy[i] = Mathf.Clamp(_faceChances[i] + percentageDecrease / 5f, 0f, 1f);
+                }
+            }
+
+            return copy;
+        }
+
+        public float[] GetAllPercentages()
+        {
+            float[] copy = new float[6];
+            for (int i = 0; i < _faceChances.Length; i++)
+            {
+                copy[i] = _faceChances[i];
+            }
+
+            return copy;
         }
 
         public float GetFacePercentage(int face)

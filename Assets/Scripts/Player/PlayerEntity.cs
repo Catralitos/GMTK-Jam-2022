@@ -11,6 +11,7 @@ namespace Player
         [HideInInspector] public PlayerMovement movement;
         [HideInInspector] public PlayerProgression progression;
         [HideInInspector] public PlayerShooting shooting;
+   
 
         #region SingleTon
 

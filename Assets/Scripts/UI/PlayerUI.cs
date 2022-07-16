@@ -27,8 +27,21 @@ public class PlayerUI : MonoBehaviour
     [Header("Cooldowns")] public Image speedBuffCooldown;
     public Image fireCooldown;
 
+    [Header("LevelUp Screen")] public GameObject levelUpScreen;
+
     private PlayerEntity _player;
 
+    #region SingleTon
+
+    public static PlayerUI Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    #endregion
+    
     private void Start()
     {
         _player = PlayerEntity.Instance;
@@ -82,5 +95,10 @@ public class PlayerUI : MonoBehaviour
         speedBuffCooldown.fillAmount = _player.buffs.speedBuffTimeLeft /
                                        (_player.buffs.speedBuffTimePerFace * _player.buffs.speedBuffsLeft);
         fireCooldown.fillAmount = _player.shooting.cooldownLeft / _player.shooting.cooldown;
+    }
+
+    public void DisplayLevelUpUI()
+    {
+        levelUpScreen.SetActive(true);
     }
 }
