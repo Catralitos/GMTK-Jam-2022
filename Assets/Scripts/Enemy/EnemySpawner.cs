@@ -32,11 +32,12 @@ public class EnemySpawner : MonoBehaviour
     public int hardCap;
     public int baseValue;
     public float growthFactor;
-    public float waveTime = 30;
-    public float waveCooldown = 10;
+    public float waveTime = 15;
+    public float waveCooldown = 5;
     float waveCooldownTime;
     int waveBasePop;
     int currentMaxPop;
+    [HideInInspector]
     public int wave = 1;
     int population;
 
@@ -47,6 +48,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start() {
         waveBasePop = baseValue;   
+        currentMaxPop = waveBasePop;
     }
 
     void Update()
@@ -59,8 +61,6 @@ public class EnemySpawner : MonoBehaviour
         if(onWaveCooldown && waveCooldownTime >= waveCooldown) {
             ChangeWave();
         }
-        if(!onWaveCooldown)
-            SetMaxPopulation();
         waveCooldownTime += Time.deltaTime;
         SetDebugUI();
         if(onCooldownTime <= 0) {
@@ -126,15 +126,8 @@ public class EnemySpawner : MonoBehaviour
         onWaveCooldown = false;
         timeSinceWaveStart = 0;
         wave++;
-        waveBasePop = currentMaxPop;
-    }
-
-    void SetMaxPopulation() {
-        //Old curves I disliked. Require differnt values for growthFactor
-        //float v = Mathf.Floor(Mathf.Log10(timeSinceWaveStart + 1));
-        //v = Mathf.Floor(100/((-0.75f * timeSinceWaveStart) + 35) - 2.85f);
-        float v = timeSinceWaveStart*timeSinceWaveStart;
-        currentMaxPop = (int)Mathf.Floor(waveBasePop + v*growthFactor);
+        waveBasePop = Mathf.FloorToInt(baseValue + growthFactor*(wave - 1));
+        currentMaxPop = waveBasePop;
     }
 
     void BeginWaveCooldown() {

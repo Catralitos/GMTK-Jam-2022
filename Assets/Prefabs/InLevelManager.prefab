@@ -53,13 +53,13 @@ MonoBehaviour:
     spawnRate: 5
   - type: {fileID: 4504868501348967166, guid: c02a1d318f4ccc8488985150029b7fe6, type: 3}
     spawnRate: 10
-  spawnOffset: 12.07
-  cooldown: 0.7
+  spawnOffset: 16.51
+  cooldown: 0
   hardCap: 1000
   baseValue: 10
-  growthFactor: 0.02
-  waveTime: 45
-  waveCooldown: 10
+  growthFactor: 3
+  waveTime: 15
+  waveCooldown: 0
   wave: 1
   text: {fileID: 0}
 --- !u!114 &1795314213
@@ -74,9 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291e4188bc55ff34a8772aa1e614b7a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridCountX: 6
+  gridCountX: 8
   gridCountY: 5
-  gridWidth: 5
+  gridWidth: 4
   gridHeight: 4
   seed: 0
   w: 0
