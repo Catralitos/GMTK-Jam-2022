@@ -15,7 +15,7 @@ namespace Player
         [HideInInspector] public int speedBuffsLeft = 0;
         [HideInInspector] public float speedBuffTimeLeft = 0;
 
-        public bool stackableBuffs;
+        public bool stackableBuffs = true;
 
         [Header("Buff Values")] public int bulletsMultipliersPerDice;
         public int knockbackBulletsPerDice;
