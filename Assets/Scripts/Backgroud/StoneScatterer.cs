@@ -105,7 +105,7 @@ public class StoneScatterer : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmosSelected() {
         float tw = 1.28f;
         float th = 1.28f;
         int x = (int)Mathf.Round(Camera.main.transform.position.x / (gridWidth * tw));
