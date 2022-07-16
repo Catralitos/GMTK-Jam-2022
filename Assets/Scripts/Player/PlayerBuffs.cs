@@ -5,13 +5,13 @@ namespace Player
 {
     public class PlayerBuffs : MonoBehaviour
     {
-        [HideInInspector] public int bulletsMultipliersLeft;
-        [HideInInspector] public int knockbackBulletsLeft;
-        [HideInInspector] public int piercingBulletsLeft;
-        [HideInInspector] public int superBulletsLeft;
+        [HideInInspector] public int bulletsMultipliersLeft = 0;
+        [HideInInspector] public int knockbackBulletsLeft = 0;
+        [HideInInspector] public int piercingBulletsLeft = 0;
+        [HideInInspector] public int superBulletsLeft = 0;
         //so para UI
-        [HideInInspector] public int speedBuffsLeft;
-        [HideInInspector] public float speedBuffTimeLeft;
+        [HideInInspector] public int speedBuffsLeft = 0;
+        [HideInInspector] public float speedBuffTimeLeft = 0;
 
         [Header("Buff Values")] public int bulletsMultipliersPerDice;
         public int knockbackBulletsPerDice;

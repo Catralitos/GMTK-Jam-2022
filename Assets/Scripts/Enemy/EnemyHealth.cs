@@ -1,11 +1,14 @@
+using Extensions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Bullets;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] public int maxHealth;
     public int CurrentHealth { get; private set; }
+    public LayerMask bulletMask;
 
     public GameObject[] dropTable;
 
@@ -20,10 +23,9 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-    void OnTriggerStay2D(Collider2D collision){
-        Bullets.DiceBullet bullet = collision.gameObject.GetComponent<Bullets.DiceBullet>();
-        if (bullet)
-        {
+    void OnCollisionEnter2D(Collision2D col){
+        if (bulletMask.HasLayer(col.gameObject.layer)){
+            DiceBullet bullet = col.gameObject.GetComponent<DiceBullet>();
             CurrentHealth -= bullet.GetDamage();
             GetComponent<EnemyMovement>().TakeKnockback();
             if (CurrentHealth <= 0)

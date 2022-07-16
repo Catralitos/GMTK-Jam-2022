@@ -47,10 +47,14 @@ namespace Bullets
         //so para balas inimigas
         private void OnCollisionEnter2D(Collision2D col)
         {
+            int number; 
             //O codigo de danificar inimigos fica nos inimigos
             if (enemies.HasLayer(col.gameObject.layer))
             {
-                PlayerEntity.Instance.buffs.ApplyBuff(PlayerEntity.Instance.dice.RollDice());
+                number = PlayerEntity.Instance.dice.RollDice();
+                Debug.Log(number);
+                PlayerEntity.Instance.buffs.ApplyBuff(number);
+
                 if (!piercingBullet)
                 {
                     Destroy(gameObject);

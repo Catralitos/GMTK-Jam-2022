@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6237718689169153099}
   - component: {fileID: 420659288696786930}
   - component: {fileID: 3957786618886338910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SmallGuy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4504868501348967166}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68e70bd2d3b2c9944a508fd79b72443c, type: 3}
   m_Name: 
@@ -59,12 +59,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4504868501348967166}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b168459fff459a4ba9d0b77c046e104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 25
+  maxHealth: 1
+  bulletMask:
+    serializedVersion: 2
+    m_Bits: 256
   dropTable: []
 --- !u!114 &4504868501348967164
 MonoBehaviour:
@@ -78,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664290ade052bf849b69e65b48042807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!114 &4504868501348967165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4504868501348967166}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f38a2497306829547825493cadb0d361, type: 3}
   m_Name: 
@@ -156,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -2413806693520163455, guid: 2909905410f73ce46ae31e7a30c9a908, type: 3}
   m_Color: {r: 0.0292809, g: 0.48368737, b: 0.8867924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,7 +179,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4504868501348967166}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d9a518045be79a14daca21808224ce49, type: 2}
   m_CullingMode: 0
@@ -200,8 +204,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008544624, y: -0.1423919}
-  m_Size: {x: 0.9481183, y: 1.568182}
+  m_Offset: {x: -0.008544604, y: 0.011226973}
+  m_Size: {x: 0.9481184, y: 1.0668991}
   m_Direction: 0
 --- !u!70 &3957786618886338910
 CapsuleCollider2D:
@@ -216,6 +220,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008544624, y: -0.14239192}
-  m_Size: {x: 0.9481183, y: 1.568182}
+  m_Offset: {x: -0.008544604, y: -0.013028622}
+  m_Size: {x: 0.9481184, y: 1.0507288}
   m_Direction: 0
