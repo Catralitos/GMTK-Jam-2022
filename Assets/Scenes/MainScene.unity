@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1842106846388188195, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.5000305
+      value: 14.500061
       objectReference: {fileID: 0}
     - target: {fileID: 1842106847346707973, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_Pivot.x
@@ -370,6 +370,10 @@ PrefabInstance:
     - target: {fileID: 2550271607177026125, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
       propertyPath: m_Name
       value: InLevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: cooldown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
       propertyPath: spawnOffset
