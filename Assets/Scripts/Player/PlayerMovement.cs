@@ -19,7 +19,7 @@ namespace Player
 
         private Animator _animator;
         private Camera _camera;
-        private GameManager _gameManager;
+        //private GameManager _gameManager;
         private PlayerControls _playerControls;
         private PlayerShooting _playerShooting;
         private Rigidbody2D _body;
@@ -35,9 +35,9 @@ namespace Player
 
         private void Awake()
         {
-            _gameManager = GameManager.Instance;
+            //_gameManager = GameManager.Instance;
             _playerControls = new PlayerControls();
-            mouseControl = _gameManager.mouseControls;
+            //mouseControl = _gameManager.mouseControls;
             if (mouseControl)
             {
                 _playerControls.KeyboardGameplay.Fire.performed += _ => _firing = true;

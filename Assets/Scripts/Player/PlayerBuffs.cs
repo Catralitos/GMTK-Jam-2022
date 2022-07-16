@@ -20,8 +20,6 @@ namespace Player
         public float fireRateDecrease;
         public float speedBuffTimePerFace;
 
-        private PlayerShooting _shooting = PlayerEntity.Instance.shooting;
-        
         private void Update()
         {
             speedBuffTimeLeft = Mathf.Clamp(speedBuffTimeLeft - Time.deltaTime, 0, Single.PositiveInfinity);
@@ -42,7 +40,7 @@ namespace Player
                     //log.AddEvent("Rolled a 1! Increasing speed!");
                     break;
                 case 2:
-                    _shooting.cooldownLeft -= fireRateDecrease;
+                    PlayerEntity.Instance.shooting.cooldownLeft -= fireRateDecrease;
                     //log.AddEvent("Rolled a 2! Decreasing next bullet's firing cooldown!");
                     break;
                 case 3:
