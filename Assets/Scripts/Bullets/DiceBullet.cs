@@ -35,8 +35,9 @@ namespace Bullets
 
         private void Update()
         {
+            
             _timeLeft -= Time.deltaTime;
-            if (_timeLeft <= 0) Destroy(gameObject);
+            if (_timeLeft <= 0 || PlayerEntity.Instance == null) Destroy(gameObject);
         }
 
         public int GetDamage()
@@ -51,6 +52,7 @@ namespace Bullets
             if (enemies.HasLayer(col.gameObject.layer))
             {
                 PlayerEntity.Instance.buffs.ApplyBuff(PlayerEntity.Instance.dice.RollDice());
+
                 if (!piercingBullet)
                 {
                     Destroy(gameObject);

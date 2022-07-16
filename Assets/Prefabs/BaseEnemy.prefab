@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5705571266585199806}
   - component: {fileID: 4476624792563397547}
   - component: {fileID: 7950789716858550929}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: BaseEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -2413806693520163455, guid: 2909905410f73ce46ae31e7a30c9a908, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9196164412010791829}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68e70bd2d3b2c9944a508fd79b72443c, type: 3}
   m_Name: 
@@ -132,12 +132,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9196164412010791829}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b168459fff459a4ba9d0b77c046e104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  maxHealth: 10
+  exp: 30
+  bulletMask:
+    serializedVersion: 2
+    m_Bits: 256
   dropTable: []
 --- !u!114 &9196164412010791837
 MonoBehaviour:
@@ -159,12 +163,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9196164412010791829}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f38a2497306829547825493cadb0d361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 3
   knockbackSpeed: 10
   knockbackDuration: 0.125
   turningSpeed: 0.5
@@ -176,7 +180,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9196164412010791829}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d0aa25c4cbfaff34ea5a23a4f98803e5, type: 2}
   m_CullingMode: 0
@@ -201,8 +205,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02025537, y: -0.2472159}
-  m_Size: {x: 0.9976673, y: 1.559414}
+  m_Offset: {x: -0.008255728, y: 0.00477612}
+  m_Size: {x: 0.97366804, y: 0.99543214}
   m_Direction: 0
 --- !u!70 &7950789716858550929
 CapsuleCollider2D:
@@ -217,6 +221,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.020255372, y: -0.24721585}
-  m_Size: {x: 0.99766725, y: 1.5594144}
+  m_Offset: {x: -0.00825569, y: -0.0012235343}
+  m_Size: {x: 0.97366804, y: 0.99543226}
   m_Direction: 0

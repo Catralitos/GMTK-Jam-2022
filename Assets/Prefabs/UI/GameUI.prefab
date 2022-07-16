@@ -8984,7 +8984,7 @@ MonoBehaviour:
   levelText: {fileID: 1842106847502474038}
   speedBuffCooldown: {fileID: 1842106847337175481}
   fireCooldown: {fileID: 1842106846874551476}
-  levelUpScreen: {fileID: 0}
+  levelUpScreen: {fileID: 1619540116}
 --- !u!1 &1842106847407753303
 GameObject:
   m_ObjectHideFlags: 0

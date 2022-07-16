@@ -25,13 +25,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        target = Player.PlayerEntity.Instance.gameObject;
+        if(Player.PlayerEntity.Instance != null)
+            target = Player.PlayerEntity.Instance.gameObject;
         rb = GetComponent<Rigidbody2D>();
         state = State.Pathfinding;
         currentDirection = GetVectorNormalizedToTarget();
         animator = GetComponent<Animator>();
     }
 
+    
 
     void FixedUpdate()
     {
@@ -65,6 +67,8 @@ public class EnemyMovement : MonoBehaviour
     }
 
     public Vector2 GetVectorNormalizedToTarget(){
+        if(Player.PlayerEntity.Instance == null)
+            return (Vector2)currentDirection;
         Vector2 VectorToTarget;
         VectorToTarget = (Vector2)target.transform.position - rb.position;
         VectorToTarget.Normalize();
@@ -73,6 +77,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeKnockback()
     {
+        if(Player.PlayerEntity.Instance == null)
+            return;
         knockbackStartTime = Time.time;
         knockbackDirection = transform.position - target.transform.position;
         state = State.Knockback;

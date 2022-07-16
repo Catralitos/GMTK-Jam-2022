@@ -22,37 +22,42 @@ namespace Player
             }
 
             sum += _faceChances[0];
+            
 
-            if (roll > sum && (sum + roll) <= _faceChances[1])
+            if (roll > sum && roll <= (_faceChances[1] + sum))
             {
                 return 2;
             }
 
             sum += _faceChances[1];
+            
 
 
-            if (roll > sum && (sum + roll) <= _faceChances[2])
+            if (roll > sum && roll <= (_faceChances[2] + sum))
             {
                 return 3;
             }
 
             sum += _faceChances[2];
+            
 
-            if (roll > sum && (sum + roll) <= _faceChances[3])
+            if (roll > sum && roll <= (_faceChances[3] + sum))
             {
                 return 4;
             }
 
             sum += _faceChances[3];
+            
 
-            if (roll > sum && (sum + roll) <= _faceChances[4])
+            if (roll > sum && roll <= (_faceChances[4] + sum))
             {
                 return 5;
             }
 
             sum += _faceChances[4];
+            
 
-            if (roll > sum && (sum + roll) <= _faceChances[5])
+            if (roll > sum && roll <= (_faceChances[5] + sum))
             {
                 return 6;
             }

@@ -25,8 +25,8 @@ namespace Player
         {
             _playerMovement = GetComponent<PlayerMovement>();
             hitsLeft = playerHits;
-            _renderer = GetComponent<SpriteRenderer>();
-            _defaultMaterial = _renderer.material;
+            //_renderer = GetComponent<SpriteRenderer>();
+            //_defaultMaterial = _renderer.material;
         }
 
         public void DoDamage(int damage)
@@ -34,16 +34,16 @@ namespace Player
             if (_invincible /*|| TimeManager.Instance.gameEnded*/) return;
             if (hitsLeft > 1)
             {
-                AudioManager.Instance.Play("PlayerHit");
+                //AudioManager.Instance.Play("PlayerHit");
                 hitsLeft= hitsLeft - damage;
                 //TimeManager.Instance.healthText.text = TimeManager.Instance.healthText.text.Substring(0, hitsLeft * 2);
-                _renderer.material = hitMaterial;
+                //_renderer.material = hitMaterial;
                 _invincible = true;
                 Invoke(nameof(RestoreVulnerability), invincibilityFrames * Time.deltaTime);
             }
             else
             {
-                AudioManager.Instance.Play("PlayerDeath");
+                //AudioManager.Instance.Play("PlayerDeath");
                 Die();
             }
         }
@@ -51,14 +51,14 @@ namespace Player
         private void RestoreVulnerability()
         {
             _invincible = false;
-            _renderer.material = _defaultMaterial;
+            //_renderer.material = _defaultMaterial;
         }
 
         private void Die()
         {
             //TimeManager.Instance.healthText.text = "";
             var spawnPos = gameObject.transform.position;
-            Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
+            //Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
             //TimeManager.Instance.GoToDeathScreen();
             Destroy(gameObject);
         }
