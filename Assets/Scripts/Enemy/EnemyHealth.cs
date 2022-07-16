@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] public int exp;
     public int CurrentHealth { get; private set; }
     public LayerMask bulletMask;
-
+    public GameObject expPickup;
     public GameObject[] dropTable;
 
     // Start is called before the first frame update
@@ -30,39 +30,18 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<EnemyMovement>().TakeKnockback();
         if (CurrentHealth <= 0)
         {
+            int expAux = exp;
             //Destroying Enemy
             Destroy(this.gameObject);
-            PlayerEntity.Instance.progression.AddExperience(exp);
+            while(expAux > 0){
+            Instantiate(expPickup, transform.position, transform.rotation);
+            expAux = expAux/10; 
+            }
+            //PlayerEntity.Instance.progression.AddExperience(exp);
             int drop = Random.Range(-1, dropTable.Length);
             if (dropTable.Length != 0 && drop != -1)
                 Instantiate(dropTable[drop], transform.position, transform.rotation);
         }
     }
         
-
-    /*public bool Damage(int damage, int attackId)
-    {
-        if (attackId != lastHitId)
-        {
-            lastHitId = attackId;
-            CurrentHealth -= damage;
-            GetComponent<EnemyMovement>().TakeKnockback();
-            if (CurrentHealth <= 0)
-            {
-                //Destroying Enemy
-                Destroy(this.gameObject);
-                killCounter++;
-                if (Random.Range(0, maxKillCount) < killCounter)
-                {
-                    int drop = Random.Range(0, dropTable.Length);
-                    if (dropTable.Length != 0)
-                        Instantiate(dropTable[drop], transform.position, transform.rotation);
-                    killCounter = 0;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-    */
 }

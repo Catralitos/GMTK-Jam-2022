@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 420659288696786930}
   - component: {fileID: 3957786618886338910}
   m_Layer: 6
-  m_Name: BigGuy
+  m_Name: SmallGuy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 4504868501348967166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -3.01, z: -7.30233}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,11 +64,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b168459fff459a4ba9d0b77c046e104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 18
-  exp: 50
+  maxHealth: 5
+  exp: 10
   bulletMask:
     serializedVersion: 2
     m_Bits: 256
+  expPickup: {fileID: 852713934872240846, guid: 103771873e7f042d28304408325d49ac, type: 3}
   dropTable: []
 --- !u!114 &4504868501348967164
 MonoBehaviour:
@@ -95,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38a2497306829547825493cadb0d361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  knockbackSpeed: 2.5
+  moveSpeed: 3
+  knockbackSpeed: 15
   knockbackDuration: 0.125
   turningSpeed: 0.2
 --- !u!50 &4504868501348967142
@@ -162,7 +163,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: 2909905410f73ce46ae31e7a30c9a908, type: 3}
-  m_Color: {r: 0.764151, g: 0.111739054, b: 0.16908523, a: 1}
+  m_Color: {r: 0.0292809, g: 0.48368737, b: 0.8867924, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -182,7 +183,7 @@ Animator:
   m_GameObject: {fileID: 4504868501348967166}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d6286e887800c874c96342c67d248049, type: 2}
+  m_Controller: {fileID: 9100000, guid: d9a518045be79a14daca21808224ce49, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -205,8 +206,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008544624, y: -0.00040018559}
-  m_Size: {x: 0.9481183, y: 0.98351026}
+  m_Offset: {x: -0.008544604, y: 0.011226973}
+  m_Size: {x: 0.9481184, y: 1.0668991}
   m_Direction: 0
 --- !u!70 &3957786618886338910
 CapsuleCollider2D:
@@ -221,6 +222,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.008544624, y: -0.00040006638}
-  m_Size: {x: 0.9481183, y: 1.0169196}
+  m_Offset: {x: -0.008544604, y: -0.013028622}
+  m_Size: {x: 0.9481184, y: 1.0507288}
   m_Direction: 0
