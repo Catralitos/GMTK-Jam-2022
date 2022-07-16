@@ -13,6 +13,7 @@ public class Attractor : MonoBehaviour
          if (playerMask.HasLayer(col.gameObject.layer))
             {
             transform.position = Vector2.MoveTowards(transform.position, col.transform.position, AttractorSpeed * Time.deltaTime);
+            AttractorSpeed += 0.1f * AttractorSpeed;
         }
     }
     
