@@ -33,10 +33,14 @@ public class EnemySpawner : MonoBehaviour
     public int baseValue;
     public float growthFactor;
     public float waveTime = 30;
+    public float waveCooldown = 10;
+    float waveCooldownTime;
     int waveBasePop;
     int currentMaxPop;
     int wave = 1;
     int population;
+
+    bool onWaveCooldown;
 
     [Header("Debug")]
     public TMP_Text text;
@@ -47,11 +51,17 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        timeSinceWaveStart += Time.deltaTime;
-        if(timeSinceWaveStart > waveTime) {
+        if(!onWaveCooldown)
+            timeSinceWaveStart += Time.deltaTime;
+        if(timeSinceWaveStart > waveTime && !onWaveCooldown) {
+            BeginWaveCooldown();
+        }
+        if(onWaveCooldown && waveCooldownTime >= waveCooldown) {
             ChangeWave();
         }
-        SetMaxPopulation();
+        if(!onWaveCooldown)
+            SetMaxPopulation();
+        waveCooldownTime += Time.deltaTime;
         SetDebugUI();
         if(onCooldownTime <= 0) {
             if(OverPopulated()) return;
@@ -113,16 +123,23 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void ChangeWave() {
+        onWaveCooldown = false;
         timeSinceWaveStart = 0;
         wave++;
         waveBasePop = currentMaxPop;
     }
 
     void SetMaxPopulation() {
-        float v = Mathf.Floor(Mathf.Log10(timeSinceWaveStart + 1));
-        v = Mathf.Floor(100/((-0.75f * timeSinceWaveStart) + 35) - 2.85f);
-        v = timeSinceWaveStart*timeSinceWaveStart;
+        //Old curves I disliked. Require differnt values for growthFactor
+        //float v = Mathf.Floor(Mathf.Log10(timeSinceWaveStart + 1));
+        //v = Mathf.Floor(100/((-0.75f * timeSinceWaveStart) + 35) - 2.85f);
+        float v = timeSinceWaveStart*timeSinceWaveStart;
         currentMaxPop = (int)Mathf.Floor(waveBasePop + v*growthFactor);
+    }
+
+    void BeginWaveCooldown() {
+        onWaveCooldown = true;
+        waveCooldownTime = 0;
     }
 
     private void OnDrawGizmosSelected() {
