@@ -76,9 +76,8 @@ public class PlayerUI : MonoBehaviour
 
         //exp
         experienceBar.fillAmount = 1.0f *
-                                   (_player.progression.currentExperience -
-                                    _player.progression.currentBaseLevelExperience) /
-                                   _player.progression.experienceForNextLevel;
+                                   (_player.progression.currentExperience - _player.progression.currentBaseLevelExperience)/
+                                   (_player.progression.experienceForNextLevel - _player.progression.currentBaseLevelExperience);
         baseLevelExperience.text = _player.progression.currentBaseLevelExperience.ToString();
         nextLevelExperience.text = _player.progression.experienceForNextLevel.ToString();
         currentExperience.text = _player.progression.currentExperience.ToString();
