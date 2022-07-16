@@ -35,7 +35,7 @@ namespace Bullets
         private void Update()
         {
             _timeLeft -= Time.deltaTime;
-            if (_timeLeft <= 0) Destroy(this.gameObject);
+            if (_timeLeft <= 0) Destroy(gameObject);
         }
 
         //so para balas inimigas

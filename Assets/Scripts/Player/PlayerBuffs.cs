@@ -34,7 +34,7 @@ namespace Player
                     break;
                 case 2:
                     //TODO rever se isto está bem
-                    _shooting.fireRate -= fireRateDecrease;
+                    _shooting.cooldownLeft -= fireRateDecrease;
                     break;
                 case 3:
                     superBulletsLeft += superBulletsPerDice;
