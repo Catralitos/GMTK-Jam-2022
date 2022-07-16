@@ -64,7 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b168459fff459a4ba9d0b77c046e104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 5
+  exp: 10
   bulletMask:
     serializedVersion: 2
     m_Bits: 256
