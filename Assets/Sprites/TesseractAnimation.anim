@@ -6,9 +6,9 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: enemy1_idle
+  m_Name: TesseractAnimation
   serializedVersion: 6
-  m_Legacy: 0
+  m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
   m_RotationCurves: []
@@ -53,27 +53,8 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings:
-    - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    pptrCurveMapping:
-    - {fileID: -1955803198, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -1386818225, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: 2094708072, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -733246243, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -659336731, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -656708713, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: 2131078511, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -1617746346, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -67788378, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -198854869, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: 318210196, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
-    - {fileID: -973482916, guid: 2e42339e5e5a943449ecc140fe0749f3, type: 3}
+    genericBindings: []
+    pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
