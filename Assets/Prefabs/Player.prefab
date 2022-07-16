@@ -145,11 +145,10 @@ MonoBehaviour:
   damagers:
     serializedVersion: 2
     m_Bits: 64
-  explosionPrefab: {fileID: 0}
-  hitMaterial: {fileID: 0}
+  hitMaterial: {fileID: 2100000, guid: 09dbcd79d6bbad54cab7b1e57ccd2df2, type: 2}
   playerHits: 5
   hitsLeft: 5
-  invincibilityFrames: 0
+  invincibilityFrames: 120
 --- !u!114 &9181740762509641374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +165,7 @@ MonoBehaviour:
   percentageGrowthFactor: 2
   basePercentageChange: 0.05
   baseLevelExperience: 100
+  statsToLevelUp: 3
   currentBaseLevelExperience: 0
   currentExperience: 0
   currentLevel: 0
