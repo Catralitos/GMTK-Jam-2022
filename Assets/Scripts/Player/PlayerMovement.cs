@@ -17,6 +17,8 @@ namespace Player
         public float speedBuffMultiplier = 2.0f;
         public int angleOffset = -90;
 
+        public GameObject firePoint;
+
         private Animator _animator;
 
         private Camera _camera;
@@ -124,11 +126,13 @@ namespace Player
             _lastAngle = _angle;
             _angle = Mathf.Atan2(_aim.y, _aim.x) * Mathf.Rad2Deg + angleOffset;
 
+            _animator.SetFloat("AimY", _aim.y);
+            _animator.SetFloat("AimX", _aim.x);
             _animator.SetFloat("Angle", _angle);
 
             if ((!mouseControl && Mathf.Abs(_lastAngle - _angle) > controllerRotationSensitivity)
                 || (mouseControl && Mathf.Abs(_lastAngle - _angle) > mouseRotationSensitivity))
-                transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+                firePoint.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
         }
     }
 }
