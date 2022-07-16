@@ -68,15 +68,18 @@ namespace Player
         public void AddPercentage(int face, float percentageIncrease)
         {
             int index = face - 1;
+            float actualPercentage = _faceChances[index] + percentageIncrease > 1
+                ? 1 - percentageIncrease
+                : percentageIncrease;
             for (int i = 0; i < _faceChances.Length; i++)
             {
                 if (i == index)
                 {
-                    _faceChances[i] = Mathf.Clamp(_faceChances[i] + percentageIncrease, 0f, 1f);
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] + actualPercentage, 0f, 1f);
                 }
                 else
                 {
-                    _faceChances[i] = Mathf.Clamp(_faceChances[i] - percentageIncrease / 5f, 0f, 1f);
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] - actualPercentage / 5f, 0f, 1f);
                 }
             }
         }
@@ -84,15 +87,18 @@ namespace Player
         public void SubtractPercentage(int face, float percentageDecrease)
         {
             int index = face - 1;
+            float actualPercentage = _faceChances[index] - percentageDecrease < 0
+                ? _faceChances[index]
+                : percentageDecrease;
             for (int i = 0; i < _faceChances.Length; i++)
             {
                 if (i == index)
                 {
-                    _faceChances[i] = Mathf.Clamp(_faceChances[i] - percentageDecrease, 0f, 1f);
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] - actualPercentage, 0f, 1f);
                 }
                 else
                 {
-                    _faceChances[i] = Mathf.Clamp(_faceChances[i] + percentageDecrease / 5f, 0f, 1f);
+                    _faceChances[i] = Mathf.Clamp(_faceChances[i] + actualPercentage / 5f, 0f, 1f);
                 }
             }
         }
@@ -101,34 +107,40 @@ namespace Player
         {
             float[] copy = new float[6];
             int index = face - 1;
+            float actualPercentage = _faceChances[index] + percentageIncrease > 1
+                ? 1 - percentageIncrease
+                : percentageIncrease;
             for (int i = 0; i < _faceChances.Length; i++)
             {
                 if (i == index)
                 {
-                    copy[i] = Mathf.Clamp(_faceChances[i] + percentageIncrease, 0f, 1f);
+                    copy[i] = Mathf.Clamp(_faceChances[i] + actualPercentage, 0f, 1f);
                 }
                 else
                 {
-                    copy[i] = Mathf.Clamp(_faceChances[i] - percentageIncrease / 5f, 0f, 1f);
+                    copy[i] = Mathf.Clamp(_faceChances[i] - actualPercentage / 5f, 0f, 1f);
                 }
             }
 
             return copy;
         }
         
-        public float[] GetSpeculativeSubtracticePercentages(int face, float percentageDecrease)
+        public float[] GetSpeculativeSubtractivePercentages(int face, float percentageDecrease)
         {
             float[] copy = new float[6];
             int index = face - 1;
+            float actualPercentage = _faceChances[index] - percentageDecrease < 0
+                ? _faceChances[index]
+                : percentageDecrease;
             for (int i = 0; i < _faceChances.Length; i++)
             {
                 if (i == index)
                 {
-                    copy[i] = Mathf.Clamp(_faceChances[i] - percentageDecrease, 0f, 1f);
+                    copy[i] = Mathf.Clamp(_faceChances[i] - actualPercentage, 0f, 1f);
                 }
                 else
                 {
-                    copy[i] = Mathf.Clamp(_faceChances[i] + percentageDecrease / 5f, 0f, 1f);
+                    copy[i] = Mathf.Clamp(_faceChances[i] + actualPercentage / 5f, 0f, 1f);
                 }
             }
 
