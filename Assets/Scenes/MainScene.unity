@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &111621759 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 361125875, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &171973627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,185 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 45030799, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: PiecingSubtrackToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 112851210, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: CooldownSubtrackToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 234208177, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: KnockbackSubtrackToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 259073801, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: CooldownAddToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 361125873, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: PiecingAddToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 386094044, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: DamageSubtrackToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 386094044, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 525561025, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: DamagePercentageBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 538799402, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MoveSpeedSubtrackToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 688147460, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: KnockbackAddToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 747549561, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MultiBulletIcon
-      objectReference: {fileID: 0}
-    - target: {fileID: 770766301, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: CooldownPercentageText
-      objectReference: {fileID: 0}
-    - target: {fileID: 785182869, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: DamageAddToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 820971148, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MultiBulletPercentageBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 860326838, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MoveSpeedIcon
-      objectReference: {fileID: 0}
-    - target: {fileID: 901697729, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MultiBulletSubtrackToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 936141007, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: PiecingPercentageBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 952398910, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: DamagePercentageText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1020527913, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: KnockbackBuff
-      objectReference: {fileID: 0}
-    - target: {fileID: 1088478083, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MoveSpeedPercentageText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1111512030, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MoveSpeedAddToggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327187804, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: PiecingPercentageText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1327187804, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444712033, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: KnockbackPercentageBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536539703, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: CooldownIcon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574714000, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: PiecingIcon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: addToggle1
-      value: 
-      objectReference: {fileID: 1682288350}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: addToggle2
-      value: 
-      objectReference: {fileID: 1684059053}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: addToggle3
-      value: 
-      objectReference: {fileID: 227085960}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: addToggle4
-      value: 
-      objectReference: {fileID: 974371924}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: addToggle5
-      value: 
-      objectReference: {fileID: 1348603576}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: addToggle6
-      value: 
-      objectReference: {fileID: 111621759}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: minusToggle1
-      value: 
-      objectReference: {fileID: 1359247977}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: minusToggle2
-      value: 
-      objectReference: {fileID: 2100305127}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: minusToggle3
-      value: 
-      objectReference: {fileID: 897590998}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: minusToggle4
-      value: 
-      objectReference: {fileID: 1832424784}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: minusToggle5
-      value: 
-      objectReference: {fileID: 726049592}
-    - target: {fileID: 1619540118, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: minusToggle6
-      value: 
-      objectReference: {fileID: 819807278}
-    - target: {fileID: 1629711131, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: DamageIcon
-      objectReference: {fileID: 0}
-    - target: {fileID: 1663086547, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MultiBulletPercentageText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682713670, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MoveSpeedPercentageBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697178265, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: KnockbackPercentageText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1986529721, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: CooldownPercentageBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 2039813315, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: KnockbackIcon
-      objectReference: {fileID: 0}
-    - target: {fileID: 2117578165, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-      propertyPath: m_Name
-      value: MultiBulletAddToggle
+    - target: {fileID: 1842106846388188195, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.5000305
       objectReference: {fileID: 0}
     - target: {fileID: 1842106847346707973, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_Pivot.x
@@ -411,17 +224,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
---- !u!114 &227085960 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 785182871, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &715664377
 GameObject:
   m_ObjectHideFlags: 3
@@ -508,50 +310,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &726049592 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 234208179, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &819807278 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 45030801, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &897590998 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 386094046, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &974371924 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2117578167, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1226299389
@@ -853,28 +611,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1348603576 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 688147462, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1359247977 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 538799404, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1680684426
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,28 +687,6 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
---- !u!114 &1682288350 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1111512032, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1684059053 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 259073803, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1733738581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,33 +734,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1800131505 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8774992636248967504, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
-  m_PrefabInstance: {fileID: 874998261515228342}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1832424784 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 901697731, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2100305127 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 112851212, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
-  m_PrefabInstance: {fileID: 171973627}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &874998261515228342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1058,25 +745,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8774992636248967504, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774992636248967505, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
-      propertyPath: mouseControl
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8774992636248967507, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8774992636248967507, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0114268195
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8774992636248967507, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.23424983
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8774992636248967507, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1110,10 +789,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8774992636881772501, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
 --- !u!4 &8494799382279544293 stripped
@@ -1121,31 +796,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8774992636248967507, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
   m_PrefabInstance: {fileID: 874998261515228342}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &8494799382279544294
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800131505}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0022786856}
-  serializedVersion: 2
-  m_Radius: 0.4977213
---- !u!114 &8494799382279544303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800131505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3226b4ef74f6e74479e8d9ca24341ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
