@@ -84,7 +84,7 @@ public class PlayerUI : MonoBehaviour
         currentExperience.text = _player.progression.currentExperience.ToString();
 
         //text
-        //waveText.text = "Wave " + EnemySpawner.instance.wave;
+        waveText.text = "Wave " + EnemySpawner.instance.wave;
         levelText.text = "Level " + _player.progression.currentLevel;
 
         //cooldowns
