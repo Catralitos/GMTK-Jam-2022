@@ -53,7 +53,7 @@ public class StoneScatterer : MonoBehaviour
         return new Vector3(
             (cameraX + i - Mathf.CeilToInt(gridCountX/2)) * w * gridWidth,
             (cameraY + j - Mathf.CeilToInt(gridCountY/2)) * h * gridHeight,
-            0);
+            10);
     }
 
     public bool InRange(int gX, int gY) {
