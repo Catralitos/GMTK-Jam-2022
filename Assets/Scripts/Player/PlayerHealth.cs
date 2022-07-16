@@ -48,6 +48,11 @@ namespace Player
             }
         }
 
+        public void heal(int lifePoints){
+            if(hitsLeft < 5)
+                hitsLeft = hitsLeft + lifePoints;
+        }
+
         private void RestoreVulnerability()
         {
             _invincible = false;
