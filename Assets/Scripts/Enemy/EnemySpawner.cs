@@ -1,3 +1,4 @@
+using Player;
 using TMPro;
 using UnityEngine;
 
@@ -132,6 +133,7 @@ namespace Enemy
             StatsCollector.ClearedWave();
             waveBasePop = Mathf.FloorToInt(baseValue + growthFactor*(wave - 1));
             currentMaxPop = waveBasePop;
+            PlayerEntity.Instance.progression.AddWavePoint();
         }
 
         void BeginWaveCooldown() {
