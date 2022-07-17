@@ -10,8 +10,7 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Dogica
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 87593d4a8c5551b45b69a369d31cacf4, type: 3}
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
