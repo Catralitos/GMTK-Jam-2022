@@ -12,6 +12,8 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public bool unlocked;
     public List<SkillTreeItem> dependencies;
     
+    public PlayerSkills.Upgrades skill;
+
     public void EnableChild()
     {
         toggle.onValueChanged.RemoveAllListeners();
@@ -119,7 +121,7 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (!CanBeBought()) return;
 
-        PlayerSkills.instance.Unlock(type);
+        PlayerSkills.instance.Unlock(skill);
 
         SkillTree.Instance.currentPoints -= cost;
         unlocked = true;

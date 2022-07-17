@@ -7815,7 +7815,16 @@ MonoBehaviour:
   textTooltip: {fileID: 2905680018762738089}
   finalPointsText: {fileID: 5734025134492417505}
   finalPointsNumber: {fileID: 8404333996035401476}
-  items: []
+  items:
+  - {fileID: 4868750779233214221}
+  - {fileID: 1877016076305322823}
+  - {fileID: 8647179003025320199}
+  - {fileID: 7996579651834122784}
+  - {fileID: 2473630615557476076}
+  - {fileID: 4897694363619995870}
+  - {fileID: 1736614807176933110}
+  - {fileID: 6220957385839381404}
+  - {fileID: 2021867038668767602}
   checkout: []
   confirmButton: {fileID: 5651142304875362586}
   exitButton: {fileID: 9009095703613833035}
@@ -8686,7 +8695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -6.5, y: 14.499878}
+  m_AnchoredPosition: {x: -6.5, y: 14.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1842106846607879186
@@ -10475,6 +10484,7 @@ MonoBehaviour:
   unlocked: 0
   dependencies:
   - {fileID: 7996579651834122784}
+  skill: 4
 --- !u!1 &3109938090177809317
 GameObject:
   m_ObjectHideFlags: 0
@@ -11176,6 +11186,7 @@ MonoBehaviour:
   unlocked: 0
   dependencies:
   - {fileID: 1736614807176933110}
+  skill: 7
 --- !u!1 &4687011139968819636
 GameObject:
   m_ObjectHideFlags: 0
@@ -11614,6 +11625,7 @@ MonoBehaviour:
   dependencies:
   - {fileID: 4868750779233214221}
   - {fileID: 1877016076305322823}
+  skill: 2
 --- !u!1 &5394174995558001946
 GameObject:
   m_ObjectHideFlags: 0
@@ -11720,6 +11732,7 @@ MonoBehaviour:
   dependencies:
   - {fileID: 7996579651834122784}
   - {fileID: 2473630615557476076}
+  skill: 5
 --- !u!1 &6405740906830215584
 GameObject:
   m_ObjectHideFlags: 0
@@ -12036,6 +12049,7 @@ MonoBehaviour:
   unlocked: 0
   dependencies:
   - {fileID: 4868750779233214221}
+  skill: 1
 --- !u!1 &6551629141758089324
 GameObject:
   m_ObjectHideFlags: 0
@@ -12968,6 +12982,7 @@ MonoBehaviour:
   description: Defense 1
   unlocked: 0
   dependencies: []
+  skill: 3
 --- !u!1 &8261230178388883613
 GameObject:
   m_ObjectHideFlags: 0
@@ -13540,6 +13555,7 @@ MonoBehaviour:
   description: Utility 1
   unlocked: 0
   dependencies: []
+  skill: 6
 --- !u!1 &8745084069251010199
 GameObject:
   m_ObjectHideFlags: 0
@@ -13644,6 +13660,7 @@ MonoBehaviour:
   description: Attack 1
   unlocked: 0
   dependencies: []
+  skill: 0
 --- !u!1 &8814875793729275645
 GameObject:
   m_ObjectHideFlags: 0
@@ -13750,6 +13767,7 @@ MonoBehaviour:
   dependencies:
   - {fileID: 1736614807176933110}
   - {fileID: 6220957385839381404}
+  skill: 8
 --- !u!1 &9013698396058179708
 GameObject:
   m_ObjectHideFlags: 0
