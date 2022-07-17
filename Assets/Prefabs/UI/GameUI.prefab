@@ -7810,7 +7810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPoints: 0
-  stillAvailablePoints: 0
   currentCost: 0
   textTooltip: {fileID: 2905680018762738089}
   finalPointsText: {fileID: 5734025134492417505}
@@ -10480,7 +10479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   toggle: {fileID: 1212860910874297722}
-  description: Defense 2
+  description: Heal 5% of maximum health each time you level up.
   unlocked: 0
   dependencies:
   - {fileID: 7996579651834122784}
@@ -11182,7 +11181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   toggle: {fileID: 3772260212092247012}
-  description: Utility 2
+  description: Increase bullet knockback by 30%.
   unlocked: 0
   dependencies:
   - {fileID: 1736614807176933110}
@@ -11620,7 +11619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 15
   toggle: {fileID: 1819825709518679396}
-  description: Attack 3
+  description: Shoot 4 extra projectiles, but they do 25% less damage.
   unlocked: 0
   dependencies:
   - {fileID: 4868750779233214221}
@@ -11727,7 +11726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 15
   toggle: {fileID: 7639807428160144263}
-  description: Defense 3
+  description: For each 300th enemy you kill, it will drop a full health pack.
   unlocked: 0
   dependencies:
   - {fileID: 7996579651834122784}
@@ -12045,7 +12044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 10
   toggle: {fileID: 7076806329534165407}
-  description: Attack 2
+  description: Piercing bullets pierce 2 more enemies.
   unlocked: 0
   dependencies:
   - {fileID: 4868750779233214221}
@@ -12979,7 +12978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   toggle: {fileID: 2616984955862321606}
-  description: Defense 1
+  description: Reduce damage taken by 30%.
   unlocked: 0
   dependencies: []
   skill: 3
@@ -13552,7 +13551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   toggle: {fileID: 7587739867075065229}
-  description: Utility 1
+  description: Increase movement speed by 30%.
   unlocked: 0
   dependencies: []
   skill: 6
@@ -13657,7 +13656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   toggle: {fileID: 84460077503627194}
-  description: Attack 1
+  description: Increase range by 30%.
   unlocked: 0
   dependencies: []
   skill: 0
@@ -13762,7 +13761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 15
   toggle: {fileID: 9058960471184772712}
-  description: Utility 3
+  description: Reduce all enemies' speed by 5%.
   unlocked: 0
   dependencies:
   - {fileID: 1736614807176933110}

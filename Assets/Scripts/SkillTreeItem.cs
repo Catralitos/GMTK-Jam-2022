@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,17 +10,25 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public string description;
     public bool unlocked;
     public List<SkillTreeItem> dependencies;
-    
+
     public PlayerSkills.Upgrades skill;
 
     public void EnableChild()
     {
         toggle.onValueChanged.RemoveAllListeners();
-        if (DependenciesUnlocked() && !unlocked)
+
+        if (unlocked || (!unlocked && DependenciesUnlocked()))
         {
-            toggle.onValueChanged.AddListener(SetPickedItem);
+            gameObject.SetActive(true);
+            if (!unlocked) toggle.onValueChanged.AddListener(SetPickedItem);
+
         }
 
+        if (dependencies.Count > 0 && !DependenciesUnlocked())
+        {
+            gameObject.SetActive(false);
+        }
+        
         if (unlocked)
         {
             ColorBlock cb = new ColorBlock();
@@ -34,13 +41,13 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         else
         {
-
-                ColorBlock cb = toggle.colors;
-                cb.normalColor = new Color(0.75f, 0.75f, 0.75f);
-                cb.selectedColor = Color.red;
-                cb.highlightedColor = new Color(0.6f, 0.6f, 0.6f);
-                cb.pressedColor = new Color(0.8f, 0.8f, 0.8f);
-                toggle.colors = cb;
+            ColorBlock cb = toggle.colors;
+            cb.normalColor = new Color(0.75f, 0.75f, 0.75f);
+            cb.selectedColor = Color.red;
+            cb.disabledColor = new Color(0.75f, 0.75f, 0.75f);
+            //cb.highlightedColor = new Color(0.6f, 0.6f, 0.6f);
+            //cb.pressedColor = new Color(0.8f, 0.8f, 0.8f);
+            toggle.colors = cb;
         }
     }
 
@@ -74,7 +81,8 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             SkillTree.Instance.currentCost += cost;
             Debug.Log("Added " + cost + " to make the current " + SkillTree.Instance.currentCost);
             ColorBlock cb = toggle.colors;
-            cb.normalColor = Color.red;;
+            cb.normalColor = Color.red;
+            ;
             cb.selectedColor = Color.red;
             cb.highlightedColor = new Color(0.6f, 0.6f, 0.6f);
             cb.pressedColor = new Color(0.8f, 0.8f, 0.8f);
@@ -86,7 +94,8 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             SkillTree.Instance.currentCost -= cost;
             Debug.Log("Subtracted " + cost + " to make the current " + SkillTree.Instance.currentCost);
             ColorBlock cb = toggle.colors;
-            cb.normalColor = Color.gray;;
+            cb.normalColor = Color.gray;
+            ;
             cb.selectedColor = Color.gray;
             cb.highlightedColor = new Color(0.6f, 0.6f, 0.6f);
             cb.pressedColor = new Color(0.8f, 0.8f, 0.8f);
