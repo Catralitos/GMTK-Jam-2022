@@ -50,6 +50,8 @@ namespace Player
         public void Heal(int lifePoints){
             if(hitsLeft < 5)
                 hitsLeft += lifePoints;
+            else
+                hitsLeft = playerHits;
         }
 
         public void FullyHeal() {
