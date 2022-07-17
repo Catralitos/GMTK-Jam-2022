@@ -1,4 +1,3 @@
-using Player;
 using TMPro;
 using UnityEngine;
 
@@ -56,6 +55,7 @@ namespace Enemy
 
         void Update()
         {
+            StatsCollector.SurvivedTime(Time.deltaTime);
             if(!onWaveCooldown)
                 timeSinceWaveStart += Time.deltaTime;
             if(timeSinceWaveStart > waveTime && !onWaveCooldown) {
@@ -129,7 +129,7 @@ namespace Enemy
             onWaveCooldown = false;
             timeSinceWaveStart = 0;
             wave++;
-            PlayerEntity.Instance.progression.AddWavePoint();
+            StatsCollector.ClearedWave();
             waveBasePop = Mathf.FloorToInt(baseValue + growthFactor*(wave - 1));
             currentMaxPop = waveBasePop;
         }

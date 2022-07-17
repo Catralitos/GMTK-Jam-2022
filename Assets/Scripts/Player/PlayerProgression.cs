@@ -37,6 +37,7 @@ namespace Player
 
         public void AddExperience(int expPoints)
         {
+            StatsCollector.ObtainedExp(expPoints);
             currentExperience += expPoints;
             if (currentExperience >= experienceForNextLevel && !_leveledUp)
             {

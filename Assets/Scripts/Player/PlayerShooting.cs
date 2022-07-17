@@ -38,6 +38,7 @@ namespace Player
             if (buffs.bulletsMultipliersLeft > 0)
             {
                 bulletsToSpawn += 2;
+                StatsCollector.ShotMultiple();
                 buffs.bulletsMultipliersLeft--;
             }
 
@@ -70,7 +71,7 @@ namespace Player
                 {
                     diceBullet.piercingBullet = true;
                 }
-
+                StatsCollector.ShotPiercing();
                 buffs.piercingBulletsLeft--;
             }
 
@@ -80,7 +81,7 @@ namespace Player
                 {
                     diceBullet.superBullet = true;
                 }
-
+                StatsCollector.ShotSuper();
                 buffs.superBulletsLeft--;
             }
 
@@ -90,7 +91,7 @@ namespace Player
                 {
                     diceBullet.knockbackBullet = true;
                 }
-
+                StatsCollector.ShotKnockback();
                 buffs.knockbackBulletsLeft--;
             }
 
