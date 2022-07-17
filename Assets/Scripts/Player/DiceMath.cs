@@ -112,7 +112,7 @@ namespace Player
                 }
             }
 
-            Debug.Log("Sum of face chances " + _faceChances.Sum());
+            //Debug.Log("Sum of face chances " + _faceChances.Sum());
         }
 
         public void SubtractPercentage(int face, float percentageDecrease)
@@ -135,7 +135,7 @@ namespace Player
                 }
             }
 
-            Debug.Log("Sum of face chances " + _faceChances.Sum());
+            //Debug.Log("Sum of face chances " + _faceChances.Sum());
         }
 
         public float[] GetSpeculativeAdditivePercentages(int face, float percentageIncrease)
@@ -173,7 +173,7 @@ namespace Player
                 }
             }
             
-            Debug.Log("Sum of copy " + copy.Sum());
+            //Debug.Log("Sum of copy " + copy.Sum());
             return copy;
         }
 
@@ -196,7 +196,7 @@ namespace Player
                 }
             }
       
-            Debug.Log("Sum of copy " + copy.Sum());
+            //Debug.Log("Sum of copy " + copy.Sum());
             return copy;
         }
 

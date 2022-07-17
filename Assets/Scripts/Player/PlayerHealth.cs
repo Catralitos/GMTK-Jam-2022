@@ -34,6 +34,7 @@ namespace Player
             {
                 //AudioManager.Instance.Play("PlayerHit");
                 hitsLeft -= damage;
+                Debug.Log("HitsLeft " + hitsLeft);
                 _renderer.material = hitMaterial;
                 _invincible = true;
                 Invoke(nameof(RestoreVulnerability), invincibilityFrames * Time.deltaTime);
@@ -46,9 +47,9 @@ namespace Player
             }
         }
 
-        public void heal(int lifePoints){
+        public void Heal(int lifePoints){
             if(hitsLeft < 5)
-                hitsLeft = hitsLeft + lifePoints;
+                hitsLeft += lifePoints;
         }
 
         private void RestoreVulnerability()
@@ -59,7 +60,7 @@ namespace Player
 
         private void Die()
         {
-            var spawnPos = gameObject.transform.position;
+            //var spawnPos = gameObject.transform.position;
             //Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
             SceneManager.LoadScene(0);
             Destroy(gameObject);

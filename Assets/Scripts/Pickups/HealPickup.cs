@@ -7,7 +7,7 @@ public class HealPickup : Pickup
 {
     public override void Effect()
     {
-        PlayerEntity.Instance.health.heal(1);
+        PlayerEntity.Instance.health.Heal(1);
         //SoundManager.Instance.PlayOneShot("Heal");
     }
 }

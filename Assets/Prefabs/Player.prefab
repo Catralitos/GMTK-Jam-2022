@@ -114,6 +114,8 @@ MonoBehaviour:
   runSpeed: 7
   speedBuffMultiplier: 1.25
   angleOffset: -90
+  firePoint: {fileID: 0}
+  lightPoint: {fileID: 0}
 --- !u!114 &8774992636248967532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +131,10 @@ MonoBehaviour:
   baseBullets: 1
   coneAngle: 60
   cooldown: 1
+  shockwaveRadius: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   cooldownLeft: 0
   bulletPrefab: {fileID: 3737490843885936421, guid: 64f2aed1a41f0c8448115af695c392f6, type: 3}
   firePoint: {fileID: 8774992636881772502}
@@ -148,8 +154,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   hitMaterial: {fileID: 2100000, guid: 09dbcd79d6bbad54cab7b1e57ccd2df2, type: 2}
-  playerHits: 5
-  hitsLeft: 5
+  playerHits: 10
+  hitsLeft: 10
   invincibilityFrames: 120
 --- !u!114 &9181740762509641374
 MonoBehaviour:
@@ -191,6 +197,7 @@ MonoBehaviour:
   superBulletsLeft: 0
   speedBuffsLeft: 0
   speedBuffTimeLeft: 0
+  stackableBuffs: 1
   bulletsMultipliersPerDice: 2
   knockbackBulletsPerDice: 1
   piercingBulletsPerDice: 1
