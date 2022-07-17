@@ -71,7 +71,7 @@ namespace UI
             minusToggles.Add(minusToggle4);
             minusToggles.Add(minusToggle5);
             minusToggles.Add(minusToggle6);
-
+ 
             confirmButton.onClick.AddListener(ConfirmButton);
         }
 
