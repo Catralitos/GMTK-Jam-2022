@@ -58,7 +58,7 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private bool CanBeBought()
     {
-        if (cost > SkillTree.Instance.stillAvailablePoints) return false;
+        if (cost > SkillTree.Instance.currentPoints - SkillTree.Instance.GetCheckoutPrice()) return false;
         foreach (SkillTreeItem dependency in dependencies)
         {
             if (dependency.unlocked == false && !SkillTree.Instance.checkout.Contains(dependency)) return false;
@@ -84,7 +84,6 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             SkillTree.Instance.checkout.Add(this);
             SkillTree.Instance.currentCost += cost;
             Debug.Log("Added " + cost + " to make the current " + SkillTree.Instance.currentCost);
-            SkillTree.Instance.stillAvailablePoints -= cost;
             ColorBlock cb = toggle.colors;
             cb.normalColor = Color.red;;
             cb.selectedColor = Color.red;
@@ -97,7 +96,6 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             SkillTree.Instance.checkout.Remove(this);
             SkillTree.Instance.currentCost -= cost;
             Debug.Log("Subtracted " + cost + " to make the current " + SkillTree.Instance.currentCost);
-            SkillTree.Instance.stillAvailablePoints += cost;
             ColorBlock cb = toggle.colors;
             cb.normalColor = Color.gray;;
             cb.selectedColor = Color.gray;
