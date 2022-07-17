@@ -138,6 +138,7 @@ MonoBehaviour:
   cooldownLeft: 0
   bulletPrefab: {fileID: 3737490843885936421, guid: 64f2aed1a41f0c8448115af695c392f6, type: 3}
   firePoint: {fileID: 8774992636881772502}
+  shockAnim: {fileID: 0}
 --- !u!114 &8774992636248967535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +157,7 @@ MonoBehaviour:
   hitMaterial: {fileID: 2100000, guid: 09dbcd79d6bbad54cab7b1e57ccd2df2, type: 2}
   playerHits: 10
   hitsLeft: 10
-  invincibilityFrames: 120
+  invincibilityFrames: 60
 --- !u!114 &9181740762509641374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +180,7 @@ MonoBehaviour:
   currentBaseLevelExperience: 0
   currentExperience: 0
   currentLevel: 0
+  currentWavePoints: 0
   experienceForNextLevel: 0
   nextPercentageIncrease: 0
 --- !u!114 &2471169956689471708
@@ -200,6 +202,7 @@ MonoBehaviour:
   speedBuffsLeft: 0
   speedBuffTimeLeft: 0
   stackableBuffs: 1
+  buffsEffectsPrefabs: []
   bulletsMultipliersPerDice: 2
   knockbackBulletsPerDice: 1
   piercingBulletsPerDice: 1
