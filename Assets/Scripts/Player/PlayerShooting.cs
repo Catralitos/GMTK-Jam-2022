@@ -42,6 +42,10 @@ namespace Player
                 buffs.bulletsMultipliersLeft--;
             }
 
+            if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.ProjectileNumber)) {
+                bulletsToSpawn += 4;
+            }
+
             List<DiceBullet> bulletsSpawned = new List<DiceBullet>(bulletsToSpawn);
 
             float angleInterval = coneAngle / (bulletsToSpawn - 1);

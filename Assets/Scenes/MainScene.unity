@@ -501,6 +501,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+--- !u!1 &1226299390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2550271607177026125, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+  m_PrefabInstance: {fileID: 1226299389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1226299391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226299390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf6798ba2278f84299d957338642229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageFactorOnProjectileUpgrade: 0.75
+  reductionFactorOnReductionUpgrade: 0.7
+  healFractionOnLevel: 0.05
+  numberOfDeathsTillDrop: 300
+  movementSpeedFactorOnUpgarde: 1.3
+  knockbackFactorOnUpgarde: 1.3
+  slowFactorOnUpgarde: 0.95
+  upgrades: 
 --- !u!1 &1326003536
 GameObject:
   m_ObjectHideFlags: 0

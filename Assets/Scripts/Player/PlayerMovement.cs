@@ -102,6 +102,9 @@ namespace Player
             float actualMoveSpeed = PlayerEntity.Instance.buffs.speedBuffTimeLeft > 0
                 ? runSpeed * speedBuffMultiplier
                 : runSpeed;
+            if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.MovementSpeed)) {
+                actualMoveSpeed *= PlayerSkills.instance.movementSpeedFactorOnUpgarde;
+            }
             if (mouseControl)
             {
                 _body.velocity = (_moveV + _moveH) * actualMoveSpeed;

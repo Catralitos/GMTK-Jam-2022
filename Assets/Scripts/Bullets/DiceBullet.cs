@@ -8,9 +8,10 @@ namespace Bullets
     public class DiceBullet : MonoBehaviour
     {
         [HideInInspector] public bool knockbackBullet;
-        [HideInInspector] public bool piercingBullet;
+         public bool piercingBullet;
         [HideInInspector] public bool superBullet;
         public float lifeSpan;
+        public float upgradedLifeSpan;
 
         public LayerMask enemies;
 
@@ -19,6 +20,10 @@ namespace Bullets
         public int bulletDamage = 1;
         public float superBulletDamageMultiplier;
         public float bulletSpeed = 20.0f;
+
+        public int maxEnemiesPierced;
+        public int maxEnemiesPiercedUpgraded;
+        int enemiesPierced = 0;
 
         private float _timeLeft;
         private Rigidbody2D _body;
@@ -32,6 +37,9 @@ namespace Bullets
         {
             _body.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
             _timeLeft = lifeSpan;
+            if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.Range)) {
+                _timeLeft = upgradedLifeSpan;
+            }
         }
 
         private void Update()
@@ -43,11 +51,13 @@ namespace Bullets
 
         public int GetDamage()
         {
-            return Mathf.RoundToInt(superBullet ? bulletDamage * superBulletDamageMultiplier : bulletDamage);
+            float skillModifier = 1.0f;
+            if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.ProjectileNumber)) skillModifier = PlayerSkills.instance.damageFactorOnProjectileUpgrade;
+            return Mathf.RoundToInt(superBullet ? bulletDamage * superBulletDamageMultiplier * skillModifier : bulletDamage * skillModifier);
         }
 
         //so para balas inimigas
-        private void OnTriggerStay2D(Collider2D col)
+        private void OnTriggerEnter2D(Collider2D col)
         {
             //O codigo de danificar inimigos fica nos inimigos
             if (enemies.HasLayer(col.gameObject.layer))
@@ -59,6 +69,15 @@ namespace Bullets
                 {
                     Destroy(gameObject);
                 }
+                else{
+                    int max = PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.Piercing) ? maxEnemiesPiercedUpgraded : maxEnemiesPierced;
+                    if(enemiesPierced >= max) {
+                        Destroy(gameObject);
+                    }
+                    else{
+                        enemiesPierced++;
+                    }
+                } 
             }
         }
     }

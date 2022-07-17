@@ -44,11 +44,18 @@ namespace Enemy
                     animator.SetFloat("Horizontal", currentDirection.x);
                     animator.SetFloat("Vertical", currentDirection.y);
                     animator.SetFloat("Speed", 1);
-                    rb.MovePosition(rb.position + currentDirection * moveSpeed * Time.fixedDeltaTime);
+
+                    float skillMod = 1.0f;
+                    if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.SlowerEnemies)) skillMod = PlayerSkills.instance.slowFactorOnUpgarde;
+
+                    rb.MovePosition(rb.position + currentDirection * moveSpeed * Time.fixedDeltaTime * skillMod);
                     break;
                 case State.Knockback:
                     rb.MovePosition(rb.position + knockbackDirection * knockbackSpeed * Time.fixedDeltaTime);
-                    if (Time.time - knockbackStartTime > knockbackDuration)
+                    float knockbackActualDuration = knockbackDuration;
+                    if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.Knockback)) knockbackActualDuration *= PlayerSkills.instance.knockbackFactorOnUpgarde;
+
+                    if (Time.time - knockbackStartTime > knockbackActualDuration)
                         state = State.Pathfinding;
                     break;
             }

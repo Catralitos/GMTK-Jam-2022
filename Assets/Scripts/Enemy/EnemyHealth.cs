@@ -5,6 +5,8 @@ namespace Enemy
 {
     public class EnemyHealth : MonoBehaviour
     {
+        public static int deathCount;
+
         [SerializeField] public int maxHealth;
         [SerializeField] public int exp;
         public int CurrentHealth { get; private set; }
@@ -42,6 +44,13 @@ namespace Enemy
             if (CurrentHealth <= 0 && _isDead == false)
             {
                 _isDead = true;
+                if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.HealthDrops)) {
+                    if(deathCount >= PlayerSkills.instance.numberOfDeathsTillDrop) {
+                        //TO DO: Drop full hp pack
+                        deathCount += 0;
+                    }
+                    deathCount++;
+                }
                 //Destroying Enemy
                 GameObject exp_drop = Instantiate(expPickup, transform.position, transform.rotation) as GameObject;;
                 exp_drop.GetComponentInChildren<ExpPickup>().Set(exp);

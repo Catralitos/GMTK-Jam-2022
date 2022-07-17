@@ -33,6 +33,7 @@ namespace Player
             if (hitsLeft > 1)
             {
                 //AudioManager.Instance.Play("PlayerHit");
+                if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.DamageReduction)) damage = Mathf.FloorToInt(damage * PlayerSkills.instance.reductionFactorOnReductionUpgrade);
                 hitsLeft -= damage;
                 Debug.Log("HitsLeft " + hitsLeft);
                 _renderer.material = hitMaterial;

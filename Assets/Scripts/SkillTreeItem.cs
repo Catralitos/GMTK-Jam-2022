@@ -12,6 +12,8 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public bool unlocked;
     public List<SkillTreeItem> dependencies;
 
+    public PlayerSkills.Upgrades type;
+
     [Header("StuffThisDoes")] public float speedBuffMultiplier = 1;
     public float speedBuffTimeMultiplier = 1;
     public float fireCooldownDecreaseMultiplier = 1;
@@ -122,6 +124,9 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void Unlock()
     {
         if (!CanBeBought()) return;
+
+        PlayerSkills.instance.Unlock(type);
+
         SkillTree.Instance.currentPoints -= cost;
         unlocked = true;
         toggle.onValueChanged.RemoveAllListeners();
