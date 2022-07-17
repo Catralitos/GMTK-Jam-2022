@@ -67,7 +67,7 @@ namespace Player
         {
             //var spawnPos = gameObject.transform.position;
             //Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
             Destroy(gameObject);
         }
     }
