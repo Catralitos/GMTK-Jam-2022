@@ -35,17 +35,9 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public void ToggleFullscreen()
+    public void ToggleFullscreen(bool value)
     {
-        if (fullscreen)
-        {
-            Screen.SetResolution(1280, 720, false, 60);
-            fullscreen = false;
-        }
-        else
-        {
-            Screen.SetResolution(1920, 1080, true, 60);
-            fullscreen = true;
-        }
+        Screen.SetResolution(1280, 720, value, 60);
+        fullscreen = value;
     }
 }
