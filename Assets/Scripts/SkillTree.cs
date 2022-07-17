@@ -19,7 +19,6 @@ public class SkillTree : MonoBehaviour
     #endregion
 
     [HideInInspector] public int currentPoints;
-    [HideInInspector] public int stillAvailablePoints;
     [HideInInspector] public int currentCost;
     public TextMeshProUGUI textTooltip;
     //public TextMeshProUGUI currentPointsText;
@@ -35,7 +34,6 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        stillAvailablePoints = currentPoints;
         confirmButton.onClick.AddListener(Checkout);
         exitButton.onClick.AddListener(CloseScreen);
     }
@@ -60,6 +58,17 @@ public class SkillTree : MonoBehaviour
         finalPointsNumber.color = finalPoints == currentPoints ? Color.black : Color.red;
     }
 
+    public int GetCheckoutPrice()
+    {
+        int c = 0;
+        foreach (SkillTreeItem x in checkout)
+        {
+            c += x.cost;
+        }
+
+        return c;
+    }
+
     private void Checkout()
     {
         if (currentCost > currentPoints) return;
@@ -71,7 +80,6 @@ public class SkillTree : MonoBehaviour
         currentPoints -= currentCost;
         PlayerEntity.Instance.progression.currentWavePoints -= currentCost;
         currentCost = 0;
-        stillAvailablePoints = currentPoints;
         CloseScreen();
     }
 
