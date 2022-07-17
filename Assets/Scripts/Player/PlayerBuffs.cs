@@ -17,6 +17,8 @@ namespace Player
 
         public bool stackableBuffs = true;
 
+        public GameObject[] buffsEffectsPrefabs;
+
         [Header("Buff Values")] public int bulletsMultipliersPerDice;
         public int knockbackBulletsPerDice;
         public int piercingBulletsPerDice;

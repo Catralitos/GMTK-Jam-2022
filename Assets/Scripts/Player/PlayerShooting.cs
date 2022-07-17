@@ -17,6 +17,8 @@ namespace Player
         public GameObject bulletPrefab;
         public Transform firePoint;
 
+        public Animator shockAnim;
+
         private bool _canShoot = true;
 
         private void Update()
@@ -105,6 +107,7 @@ namespace Player
 
         public void doShockwave() {
             Vector2 playerPosition = PlayerEntity.Instance.gameObject.transform.position;
+            shockAnim.SetTrigger("shockwaving");
             Collider2D[] enemies = Physics2D.OverlapCircleAll(playerPosition, shockwaveRadius, enemyLayer.value);
             foreach(Collider2D collider in enemies) {
                 collider.GetComponent<EnemyMovement>().TakeKnockback(true);
