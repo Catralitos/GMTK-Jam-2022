@@ -207,6 +207,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 14.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1842106846607879184, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_fontSize
+      value: 38.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106846607879184, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c974056d422b464caaf430b4b3c9c0c, type: 2}
+    - target: {fileID: 1842106846607879184, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -702345438387766275, guid: 0c974056d422b464caaf430b4b3c9c0c, type: 2}
+    - target: {fileID: 1842106846607879187, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 155.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106846607879187, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106846607879187, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 407.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106846607879187, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 1842106847346707973, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -303,6 +331,34 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 1842106847502474038, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_fontSize
+      value: 34.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106847502474038, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c974056d422b464caaf430b4b3c9c0c, type: 2}
+    - target: {fileID: 1842106847502474038, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -702345438387766275, guid: 0c974056d422b464caaf430b4b3c9c0c, type: 2}
+    - target: {fileID: 1842106847502474185, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 155.3353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106847502474185, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29.0526
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106847502474185, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 407.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1842106847502474185, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -56.447
+      objectReference: {fileID: 0}
     - target: {fileID: 1842106847508183877, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -578,6 +634,22 @@ PrefabInstance:
     - target: {fileID: 2550271607177026125, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
       propertyPath: m_Name
       value: InLevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: growthFactor
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: enemies.Array.data[0].spawnRate
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: enemies.Array.data[1].spawnRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550271607177026126, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
+      propertyPath: enemies.Array.data[2].spawnRate
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8fd564decbf6814c8a13e09df279e40, type: 3}
