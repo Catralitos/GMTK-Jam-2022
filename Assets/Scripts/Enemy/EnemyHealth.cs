@@ -6,7 +6,6 @@ namespace Enemy
     public class EnemyHealth : MonoBehaviour
     {
         public static int deathCount;
-
         [SerializeField] public int maxHealth;
         [SerializeField] public int exp;
         public int CurrentHealth { get; private set; }
@@ -57,7 +56,14 @@ namespace Enemy
                 //PlayerEntity.Instance.progression.AddExperience(exp);
                 int drop = Random.Range(-1, dropTable.Length);
                 if (dropTable.Length != 0 && drop != -1)
-                    Instantiate(dropTable[drop], transform.position, transform.rotation);
+                    if(dropTable[drop].name == "Full heal"){
+                        int test = Random.Range(0, 21);
+                        Debug.Log(test);
+                        if(test == 0)
+                            Instantiate(dropTable[drop], transform.position, transform.rotation);
+                    }
+                    else
+                        Instantiate(dropTable[drop], transform.position, transform.rotation);
                 Destroy(this.gameObject);
             }
         }
