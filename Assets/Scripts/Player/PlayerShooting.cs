@@ -104,5 +104,9 @@ namespace Player
                 collider.GetComponent<EnemyMovement>().TakeKnockback(true);
             }
         }
+
+        private void OnDrawGizmosSelected() {
+            Gizmos.DrawWireSphere(transform.position, shockwaveRadius);
+        }
     }
 }

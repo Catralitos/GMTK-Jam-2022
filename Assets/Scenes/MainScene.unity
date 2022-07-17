@@ -652,6 +652,10 @@ MonoBehaviour:
   baseBullets: 1
   coneAngle: 60
   cooldown: 1
+  shockwaveRadius: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
   cooldownLeft: 0
   bulletPrefab: {fileID: 3737490843885936421, guid: 64f2aed1a41f0c8448115af695c392f6, type: 3}
   firePoint: {fileID: 1375178163}
@@ -879,6 +883,14 @@ PrefabInstance:
     - target: {fileID: 8774992636248967532, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774992636248967532, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
+      propertyPath: shockwaveRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8774992636248967532, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8774992636248967535, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: invincibilityFrames
