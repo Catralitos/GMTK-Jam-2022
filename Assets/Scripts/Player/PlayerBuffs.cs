@@ -41,18 +41,17 @@ namespace Player
             switch (face)
             {
                 case 1:
-                    if (stackableBuffs)
+                    speedBuffTimeLeft += speedBuffTimePerFace;
+                    speedBuffsLeft++;
+                    /*if (stackableBuffs)
                     {
                         speedBuffTimeLeft += speedBuffTimePerFace;
                         speedBuffsLeft++;
                     }
                     else
                     {
-                        if (speedBuffTimeLeft <= 0.01f)
-                        {
-                            speedBuffTimeLeft = speedBuffTimePerFace;
-                        }
-                    }
+                        speedBuffTimeLeft = speedBuffTimePerFace;
+                    }*/
 
                     //log.AddEvent("Rolled a 1! Increasing speed!");
                     break;

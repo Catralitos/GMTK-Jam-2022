@@ -96,10 +96,9 @@ namespace UI
             levelText.text = "Level " + _player.progression.currentLevel;
 
             //cooldowns
-            speedBuffCooldown.fillAmount = _player.buffs.speedBuffsLeft == 0 || _player.buffs.speedBuffTimeLeft <= 0.0f
-                ? 0
-                : _player.buffs.speedBuffTimeLeft /
-                  (_player.buffs.speedBuffTimePerFace * _player.buffs.speedBuffsLeft);
+            speedBuffCooldown.fillAmount = _player.buffs.speedBuffTimeLeft / 1;
+            /*speedBuffCooldown.fillAmount = _player.buffs.speedBuffsLeft > 0 ? _player.buffs.speedBuffTimeLeft /
+                                           (_player.buffs.speedBuffTimePerFace * _player.buffs.speedBuffsLeft) : 0;*/
             fireCooldown.fillAmount = 1.0f - (_player.shooting.cooldownLeft / _player.shooting.cooldown);
         }
 
