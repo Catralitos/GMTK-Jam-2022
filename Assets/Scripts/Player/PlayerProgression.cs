@@ -64,7 +64,7 @@ namespace Player
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
             PlayerUI.Instance.DisplayLevelUpUI(statsToLevelUp);
             _playerShooting.doShockwave();
-            if (healOnLevelUp) _playerHealth.FullyHeal();
+            if (PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.HealOnLevel)) _playerHealth.Heal(Mathf.RoundToInt(PlayerSkills.instance.healFractionOnLevel * _playerHealth.playerHits));
             _leveledUp = false;
         }
 

@@ -101,15 +101,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackBullet: 0
-  piercingBullet: 0
+  piercingBullet: 1
   superBullet: 0
   lifeSpan: 0.3
+  upgradedLifeSpan: 0.4
   enemies:
     serializedVersion: 2
     m_Bits: 64
   bulletDamage: 7
   superBulletDamageMultiplier: 2
   bulletSpeed: 15
+  maxEnemiesPierced: 2
+  maxEnemiesPiercedUpgraded: 5
 --- !u!50 &3737490843885936441
 Rigidbody2D:
   serializedVersion: 4

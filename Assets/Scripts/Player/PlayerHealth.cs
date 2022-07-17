@@ -33,6 +33,7 @@ namespace Player
             if (hitsLeft > 1)
             {
                 //AudioManager.Instance.Play("PlayerHit");
+                if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.DamageReduction)) damage = Mathf.FloorToInt(damage * PlayerSkills.instance.reductionFactorOnReductionUpgrade);
                 hitsLeft -= damage;
                 Debug.Log("HitsLeft " + hitsLeft);
                 _renderer.material = hitMaterial;
@@ -66,7 +67,7 @@ namespace Player
         {
             //var spawnPos = gameObject.transform.position;
             //Instantiate(explosionPrefab, spawnPos, Quaternion.identity);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
             Destroy(gameObject);
         }
     }

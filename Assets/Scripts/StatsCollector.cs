@@ -15,7 +15,7 @@ public class StatsCollector : MonoBehaviour {
         public int piercingBulletsShot;
     }
 
-    static StatsCollector instance;
+    public static StatsCollector instance;
     PlayerStats stats;
 
     private void Awake() {

@@ -130,6 +130,7 @@ namespace Enemy
             onWaveCooldown = false;
             timeSinceWaveStart = 0;
             wave++;
+            PlayerEntity.Instance.progression.AddWavePoint();
             StatsCollector.ClearedWave();
             waveBasePop = Mathf.FloorToInt(baseValue + growthFactor*(wave - 1));
             currentMaxPop = waveBasePop;
