@@ -10,12 +10,14 @@ namespace Player
         public int baseLevelExperience = 500;
         public int statsToLevelUp = 3;
         public bool healOnLevelUp;
+        public float levelUpDelay = 3f;
         [HideInInspector] public int currentBaseLevelExperience;
         [HideInInspector] public int currentExperience;
         [HideInInspector] public int currentLevel;
         [HideInInspector] public int experienceForNextLevel;
         [HideInInspector] public float nextPercentageIncrease;
 
+        private bool _leveledUp = false;
         private PlayerShooting _playerShooting;
         PlayerHealth _playerHealth;
 
@@ -33,9 +35,10 @@ namespace Player
         public void AddExperience(int expPoints)
         {
             currentExperience += expPoints;
-            if (currentExperience >= experienceForNextLevel)
+            if (currentExperience >= experienceForNextLevel && !_leveledUp)
             {
-                LevelUp();
+                _leveledUp = true;
+                Invoke(nameof(LevelUp), levelUpDelay);
             }
         }
 
@@ -48,6 +51,7 @@ namespace Player
             PlayerUI.Instance.DisplayLevelUpUI(statsToLevelUp);
             _playerShooting.doShockwave();
             if(healOnLevelUp) _playerHealth.FullyHeal();
+            _leveledUp = false;
         }
 
         public void SetNewPercentageIncrease()
