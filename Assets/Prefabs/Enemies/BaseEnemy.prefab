@@ -144,6 +144,8 @@ MonoBehaviour:
     m_Bits: 256
   expPickup: {fileID: 852713934872240846, guid: 103771873e7f042d28304408325d49ac, type: 3}
   dropTable: []
+  hitMaterial: {fileID: 2100000, guid: 09dbcd79d6bbad54cab7b1e57ccd2df2, type: 2}
+  whiteFrames: 60
 --- !u!114 &9196164412010791837
 MonoBehaviour:
   m_ObjectHideFlags: 0
