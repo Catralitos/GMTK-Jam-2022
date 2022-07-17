@@ -34,6 +34,8 @@ namespace UI
             optionsBackButton.onClick.AddListener(BackOutOptions);
             storyBackButton.onClick.AddListener(BackOutStory);
             tutorialBackButton.onClick.AddListener(BackOutTutorial);
+            GameManager.Instance.audioManager.Stop("GameMusic");
+            GameManager.Instance.audioManager.Play("MenuMusic");
         }
 
         private static void LoadGame()

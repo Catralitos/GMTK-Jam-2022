@@ -11,11 +11,11 @@ public class DeathScreen : MonoBehaviour
     public Button creditsButton;
     public TextMeshProUGUI statsBox;
     [HideInInspector]public string statsString;
-    //private AudioManager _audioManager;
+    //private AudioManager audioManager;
 
     void Start()
     {
-        //_audioManager = GetComponent<AudioManager>();
+        //audioManager = GetComponent<AudioManager>();
         StatsCollector.PlayerStats stats = StatsCollector.GetStats();
         statsString = statsString + "Small Enemies Killed: " + stats.smallEnemiesKilled +
             "\nLarge Enemies Killed: " + stats.largeEnemiesKilled + "\nBase Enemies Killed: " +  stats.baseEnemiesKilled + 
@@ -28,6 +28,8 @@ public class DeathScreen : MonoBehaviour
         mainMenuButton.onClick.AddListener(BackToMainMenu);
         restarButton.onClick.AddListener(Restart);
         creditsButton.onClick.AddListener(Credits);
+        GameManager.Instance.audioManager.Stop("GameMusic");
+        GameManager.Instance.audioManager.Play("MenuMusic");
     }
 
     void BackToMainMenu()

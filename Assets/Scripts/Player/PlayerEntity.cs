@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Player
@@ -37,6 +38,12 @@ namespace Player
             {
                 Instance = null;
             }
+        }
+
+        private void Start()
+        {
+            GameManager.Instance.audioManager.Stop("MenuMusic");
+            GameManager.Instance.audioManager.Play("GameMusic");
         }
     }
 }

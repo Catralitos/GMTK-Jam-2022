@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     
     Resolution resolution;
 
-    private AudioManager _audioManager;
+    [HideInInspector] public AudioManager audioManager;
 
     #region SingleTon
 
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            _audioManager = AudioManager.Instance;
+            audioManager = GetComponent<AudioManager>();
             resolution = Screen.currentResolution;
             fullscreen = Screen.fullScreen;
             UpdateDisplay();
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-
+    
     public void ToggleFullscreen(bool value)
     {
         fullscreen = value;
@@ -49,7 +50,8 @@ public class GameManager : MonoBehaviour
         UpdateDisplay();
     }
 
-    void UpdateDisplay() {
+    private void UpdateDisplay() {
         Screen.SetResolution(resolution.width, resolution.height, fullscreen, 60);
     }
+    
 }

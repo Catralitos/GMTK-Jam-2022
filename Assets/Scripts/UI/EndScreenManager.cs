@@ -9,6 +9,8 @@ public class EndScreenManager : MonoBehaviour
     private void Start()
     {
         creditsButton.onClick.AddListener(LoadCredits);
+        GameManager.Instance.audioManager.Stop("GameMusic");
+        GameManager.Instance.audioManager.Play("MenuMusic");
     }
 
     private static void LoadCredits()

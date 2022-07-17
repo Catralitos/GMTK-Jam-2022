@@ -10,33 +10,14 @@ namespace Audio
         private Sound _intro;
         private Sound _loop;
 
-        #region SingleTon
-
-        public static AudioManager Instance { get; private set; }
-
         private void Awake()
         {
-            // Needed if we want the audio manager to persist through scenes
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            DontDestroyOnLoad(gameObject);
-
             // Add audio source components
             foreach (Sound s in sounds)
             {
                 s.SetSource(gameObject.AddComponent<AudioSource>());
             }
         }
-
-        #endregion
 
         public void Play(string soundName)
         {
@@ -59,6 +40,7 @@ namespace Audio
                 Debug.LogWarning("Sound " + soundName + " not found!");
                 return;
             }
+
             if (!s.IsPlaying()) return;
             s.Stop();
         }
