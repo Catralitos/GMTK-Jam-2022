@@ -44,10 +44,10 @@ namespace Bullets
 
         private void Update()
         {
-            
             _timeLeft -= Time.deltaTime;
             if (_timeLeft <= 0 || PlayerEntity.Instance == null) {
                 Destroy(gameObject);
+                if(PlayerEntity.Instance == null) return;
                 int roll = PlayerEntity.Instance.dice.RollDice();
                 Instantiate(PlayerEntity.Instance.buffs.buffsEffectsPrefabs[roll - 1], this.transform.position, Quaternion.identity);
                 PlayerEntity.Instance.buffs.ApplyBuff(roll);
