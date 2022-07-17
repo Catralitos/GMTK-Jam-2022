@@ -3853,7 +3853,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 279.22803}
+  m_AnchoredPosition: {x: 0, y: 315}
   m_SizeDelta: {x: 1266, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1099301851
@@ -3876,7 +3876,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I Make My Luck
+  m_text: 'Rigged Roll:
+
+    I Make My Luck'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
@@ -3903,7 +3905,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3915,7 +3917,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

@@ -898,8 +898,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "I Make My Luck\n\nDeveloped by:\n\nCatralitos - Programming\nDiogo Mendon\xE7a
-    - Programming\nGunoTheNuno - Music\nKob-GP - Art and Programming\nSpace_Shoe
+  m_text: "Rigged Roll:\nI Make My Own Luck\n\nDeveloped by:\n\nCatralitos - Programming\nDiogo
+    Mendon\xE7a - Programming\nGunoTheNuno - Music\nKob-GP - Art and Programming\nSpace_Shoe
     - Art\nTGN-27 - Programming\n\nDeveloped in collaboration\nwith GameDev Tecnico\n\nAs
     part of the GMTK Jam 2022\n\nThanks for playing! We hope you enjoyed it!\n"
   m_isRightToLeft: 0
@@ -1029,14 +1029,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7482667652216324306, guid: 68c34e6c5a99b7e41a7884f12b5638ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e7c7b285f0890f42866bd8f30f8456c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
