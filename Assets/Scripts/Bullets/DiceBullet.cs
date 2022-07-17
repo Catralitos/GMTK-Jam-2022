@@ -46,7 +46,12 @@ namespace Bullets
         {
             
             _timeLeft -= Time.deltaTime;
-            if (_timeLeft <= 0 || PlayerEntity.Instance == null) Destroy(gameObject);
+            if (_timeLeft <= 0 || PlayerEntity.Instance == null) {
+                Destroy(gameObject);
+                int roll = PlayerEntity.Instance.dice.RollDice();
+                Instantiate(PlayerEntity.Instance.buffs.buffsEffectsPrefabs[roll - 1], this.transform.position, Quaternion.identity);
+                PlayerEntity.Instance.buffs.ApplyBuff(roll);
+            }
         }
 
         public int GetDamage()
@@ -62,18 +67,21 @@ namespace Bullets
             //O codigo de danificar inimigos fica nos inimigos
             if (enemies.HasLayer(col.gameObject.layer))
             {
-                int roll = PlayerEntity.Instance.dice.RollDice();
-                Instantiate(PlayerEntity.Instance.buffs.buffsEffectsPrefabs[roll - 1], this.transform.position, Quaternion.identity);
-                PlayerEntity.Instance.buffs.ApplyBuff(roll);
                 col.gameObject.GetComponent<EnemyHealth>().DoDamage(GetDamage());
 
                 if (!piercingBullet)
                 {
+                    int roll = PlayerEntity.Instance.dice.RollDice();
+                    Instantiate(PlayerEntity.Instance.buffs.buffsEffectsPrefabs[roll - 1], this.transform.position, Quaternion.identity);
+                    PlayerEntity.Instance.buffs.ApplyBuff(roll);
                     Destroy(gameObject);
                 }
                 else{
                     int max = PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.Piercing) ? maxEnemiesPiercedUpgraded : maxEnemiesPierced;
                     if(enemiesPierced >= max) {
+                        int roll = PlayerEntity.Instance.dice.RollDice();
+                        Instantiate(PlayerEntity.Instance.buffs.buffsEffectsPrefabs[roll - 1], this.transform.position, Quaternion.identity);
+                        PlayerEntity.Instance.buffs.ApplyBuff(roll);
                         Destroy(gameObject);
                     }
                     else{
