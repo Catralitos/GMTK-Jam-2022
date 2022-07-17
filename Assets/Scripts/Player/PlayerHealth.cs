@@ -52,6 +52,10 @@ namespace Player
                 hitsLeft += lifePoints;
         }
 
+        public void FullyHeal() {
+            hitsLeft = playerHits;
+        }
+
         private void RestoreVulnerability()
         {
             _invincible = false;

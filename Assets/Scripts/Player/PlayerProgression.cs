@@ -9,6 +9,7 @@ namespace Player
         public float basePercentageChange = 0.05f;
         public int baseLevelExperience = 500;
         public int statsToLevelUp = 3;
+        public bool healOnLevelUp;
         [HideInInspector] public int currentBaseLevelExperience;
         [HideInInspector] public int currentExperience;
         [HideInInspector] public int currentLevel;
@@ -16,6 +17,7 @@ namespace Player
         [HideInInspector] public float nextPercentageIncrease;
 
         private PlayerShooting _playerShooting;
+        PlayerHealth _playerHealth;
 
         private void Start()
         {
@@ -25,6 +27,7 @@ namespace Player
             experienceForNextLevel = baseLevelExperience;
             SetNewPercentageIncrease();
             _playerShooting = GetComponent<PlayerShooting>();
+            _playerHealth = GetComponent<PlayerHealth>();
         }
 
         public void AddExperience(int expPoints)
@@ -44,6 +47,7 @@ namespace Player
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
             PlayerUI.Instance.DisplayLevelUpUI(statsToLevelUp);
             _playerShooting.doShockwave();
+            if(healOnLevelUp) _playerHealth.FullyHeal();
         }
 
         public void SetNewPercentageIncrease()
