@@ -7,6 +7,7 @@ using TMPro;
 public class DeathScreen : MonoBehaviour
 {
     public Button mainMenuButton;
+    public Button restarButton;
     public TextMeshProUGUI statsBox;
     [HideInInspector]public string statsString;
     //private AudioManager _audioManager;
@@ -24,14 +25,18 @@ public class DeathScreen : MonoBehaviour
             " piercingBulletsShot: " + stats.piercingBulletsShot;
         statsBox.text = statsString;
         mainMenuButton.onClick.AddListener(BackToMainMenu);
+        restarButton.onClick.AddListener(Restart);
     }
 
     void BackToMainMenu()
     {
-        //_audioManager.Play("ButtonClick");
         SceneManager.LoadScene(0);
     }
     
+   void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
 
 
