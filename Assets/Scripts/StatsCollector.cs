@@ -24,6 +24,11 @@ public class StatsCollector : MonoBehaviour {
 
     }
 
+    public static void Zero() {
+        if(instance == null) return;
+        instance.stats = new PlayerStats();
+    }
+
     public static void KillSmall() {
         if(instance == null) return;
         instance.stats.smallEnemiesKilled++;

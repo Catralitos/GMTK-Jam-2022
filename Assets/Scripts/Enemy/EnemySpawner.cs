@@ -52,6 +52,7 @@ namespace Enemy
         void Start() {
             waveBasePop = baseValue;   
             currentMaxPop = waveBasePop;
+            StatsCollector.Zero();
         }
 
         void Update()

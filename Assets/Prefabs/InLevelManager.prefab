@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2550271607177026126}
   - component: {fileID: 1795314213}
   - component: {fileID: 1795314214}
-  - component: {fileID: 1148371787}
+  - component: {fileID: 1226299391}
   m_Layer: 0
   m_Name: InLevelManager
   m_TagString: Untagged
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 8343504788663545201, guid: ac95fcbc3925d104c83bdb37d50ed313, type: 3}
---- !u!114 &1148371787
+--- !u!114 &1226299391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2550271607177026125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc58d86662983645b38c3fd9e91f242, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cf6798ba2278f84299d957338642229, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageFactorOnProjectileUpgrade: 0.75
+  reductionFactorOnReductionUpgrade: 0.7
+  healFractionOnLevel: 0.1
+  numberOfDeathsTillDrop: 300
+  movementSpeedFactorOnUpgarde: 1.3
+  knockbackFactorOnUpgarde: 1.3
+  slowFactorOnUpgarde: 0.95
+  upgrades: 
