@@ -59,22 +59,22 @@ public class PlayerUI : MonoBehaviour
         healthBar.fillAmount = 1.0f * _player.health.hitsLeft / _player.health.playerHits;
 
         //buffs
-        superBulletCounter.text = "X " + _player.buffs.superBulletsLeft;
+        superBulletCounter.text = _player.buffs.stackableBuffs ? "X " + _player.buffs.superBulletsLeft : "";
         superBulletIcon.color =
             _player.buffs.superBulletsLeft == 0
                 ? Color.gray
                 : Color.white;
-        multiBulletCounter.text = "X " + _player.buffs.bulletsMultipliersLeft;
+        multiBulletCounter.text = _player.buffs.stackableBuffs ? "X " + _player.buffs.bulletsMultipliersLeft : "";
         multiBulletIcon.color =
             _player.buffs.bulletsMultipliersLeft == 0
                 ? Color.gray
                 : Color.white;
-        knockbackBulletCounter.text = "X " + _player.buffs.knockbackBulletsLeft;
+        knockbackBulletCounter.text = _player.buffs.stackableBuffs ? "X " + _player.buffs.knockbackBulletsLeft : "";
         knockbackBulletIcon.color =
             _player.buffs.knockbackBulletsLeft == 0
                 ? Color.gray
                 : Color.white;
-        piercingBulletCounter.text = "X " + _player.buffs.piercingBulletsLeft;
+        piercingBulletCounter.text = _player.buffs.stackableBuffs ? "X " + _player.buffs.piercingBulletsLeft : "";
         piercingBulletIcon.color =
             _player.buffs.piercingBulletsLeft == 0
                 ? Color.gray

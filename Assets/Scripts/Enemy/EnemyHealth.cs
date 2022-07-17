@@ -13,14 +13,22 @@ public class EnemyHealth : MonoBehaviour
     public LayerMask bulletMask;
     public GameObject expPickup;
     public GameObject[] dropTable;
-    private bool isDead;
+    
+    private SpriteRenderer _renderer;
+    private Material _defaultMaterial;
+    public Material hitMaterial;
+    public int whiteFrames;
+
+    private bool _isDead;
 
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentHealth = maxHealth;
-        isDead = false;
+        _isDead = false;
+        _renderer = GetComponent<SpriteRenderer>();
+        _defaultMaterial = _renderer.material;
     }
 
     private void Update()
@@ -31,9 +39,11 @@ public class EnemyHealth : MonoBehaviour
     public void DoDamage(int damage){
         CurrentHealth -= damage;
         GetComponent<EnemyMovement>().TakeKnockback(false);
-        if (CurrentHealth <= 0 && isDead == false)
+        _renderer.material = hitMaterial;
+        Invoke(nameof(RestoreColor), whiteFrames * Time.deltaTime);
+        if (CurrentHealth <= 0 && _isDead == false)
         {
-            isDead = true;
+            _isDead = true;
             //Destroying Enemy
             GameObject exp_drop = Instantiate(expPickup, transform.position, transform.rotation) as GameObject;;
             exp_drop.GetComponentInChildren<ExpPickup>().Set(exp);
@@ -43,6 +53,11 @@ public class EnemyHealth : MonoBehaviour
                 Instantiate(dropTable[drop], transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
+    }
+    
+    private void RestoreColor()
+    {
+        _renderer.material = _defaultMaterial;
     }
         
 }
