@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Bullets;
+using Enemy;
 using UnityEngine;
 
 namespace Player

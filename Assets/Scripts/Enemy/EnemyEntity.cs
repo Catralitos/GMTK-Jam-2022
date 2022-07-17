@@ -1,21 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-public class EnemyEntity : MonoBehaviour
+
+namespace Enemy
 {
-    public EnemyHealth Health { get; private set; }
-
-    void OnEnable()
+    public class EnemyEntity : MonoBehaviour
     {
-        Health = GetComponent<EnemyHealth>();
-    }
+        public EnemyHealth Health { get; private set; }
 
-    private void Update()
-    {
+        void OnEnable()
+        {
+            Health = GetComponent<EnemyHealth>();
+        }
+
+        private void Update()
+        {
         
-    }
+        }
 
-    private void OnDestroy() {
-        EnemySpawner.instance.WarnDeath();
+        private void OnDestroy() {
+            EnemySpawner.instance.WarnDeath();
+        }
     }
 }
