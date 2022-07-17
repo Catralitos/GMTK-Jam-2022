@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [HideInInspector] public int score;
     
+    Resolution resolution;
+
     private AudioManager _audioManager;
 
     #region SingleTon
@@ -21,8 +23,9 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             _audioManager = AudioManager.Instance;
-            if (fullscreen) Screen.SetResolution(1920, 1080, true, 60);
-            else Screen.SetResolution(1280, 720, false, 60);
+            resolution = Screen.currentResolution;
+            fullscreen = Screen.fullScreen;
+            UpdateDisplay();
         }
         else
         {
@@ -37,7 +40,16 @@ public class GameManager : MonoBehaviour
 
     public void ToggleFullscreen(bool value)
     {
-        Screen.SetResolution(1280, 720, value, 60);
         fullscreen = value;
+        UpdateDisplay();
+    }
+
+    public void SetResolution(Resolution newResolution){
+        resolution = newResolution;
+        UpdateDisplay();
+    }
+
+    void UpdateDisplay() {
+        Screen.SetResolution(resolution.width, resolution.height, fullscreen, 60);
     }
 }

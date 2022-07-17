@@ -541,7 +541,7 @@ MonoBehaviour:
   m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.6
+  m_fontSize: 70
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -859,7 +859,7 @@ MonoBehaviour:
   m_text: FullScreen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &248777778
@@ -1804,7 +1804,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 327087757}
+        m_TargetAssemblyTypeName: OptionsManager, Assembly-CSharp
+        m_MethodName: SetRes
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &472615951
 MonoBehaviour:
@@ -2230,7 +2242,7 @@ MonoBehaviour:
   m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2254,7 +2266,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 71.6
+  m_fontSize: 70
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2293,7 +2305,7 @@ MonoBehaviour:
   m_margin: {x: 10, y: 10, z: 10, w: 10}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &617603676
@@ -2815,7 +2827,7 @@ MonoBehaviour:
   m_text: Move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3148,7 +3160,7 @@ MonoBehaviour:
   m_text: Aim
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4095,7 +4107,7 @@ MonoBehaviour:
   m_text: Enemies will hurt you if they touch you.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5003,7 +5015,7 @@ MonoBehaviour:
   m_text: Shoot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5337,7 +5349,7 @@ MonoBehaviour:
     determine a buff you'll get on your next shot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5624,7 +5636,7 @@ MonoBehaviour:
   m_text: Resolution
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5687,7 +5699,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1853220835
@@ -6107,7 +6119,7 @@ MonoBehaviour:
     of getting each buff'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6760,7 +6772,7 @@ MonoBehaviour:
     to spend them on  upgrades that last until you die.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
-  m_sharedMaterial: {fileID: 1332964208978996476, guid: 7c09aa2ed9100cd4fab4dc2c2d66ff67, type: 2}
+  m_sharedMaterial: {fileID: 815061340315858105, guid: 4962ac0716a29b348928054ff9e8aaaf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

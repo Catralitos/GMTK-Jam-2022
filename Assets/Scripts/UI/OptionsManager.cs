@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class OptionsManager : MonoBehaviour
         bool value = GameManager.Instance.fullscreen;
         fullscreenToggle.isOn = value;
 
-        resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
@@ -28,5 +29,9 @@ public class OptionsManager : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetRes(int index) {
+        GameManager.Instance.SetResolution(resolutions[index]);
     }
 }
