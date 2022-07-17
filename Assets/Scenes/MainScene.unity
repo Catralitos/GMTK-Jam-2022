@@ -1306,7 +1306,7 @@ PrefabInstance:
     - target: {fileID: 8774992636248967532, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: shockAnim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 261628038}
     - target: {fileID: 8774992636248967532, guid: 4acf6662a8c0d3a469e98bf6817230bc, type: 3}
       propertyPath: shockwaveRadius
       value: 2

@@ -71,8 +71,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   expPickup: {fileID: 852713934872240846, guid: 103771873e7f042d28304408325d49ac, type: 3}
-  dropTable:
-  - {fileID: 1704191678395549455, guid: 0a3817b49bfed49f4bf50d33296ba0c6, type: 3}
+  fullHeal: {fileID: 1704191678395549455, guid: 0a3817b49bfed49f4bf50d33296ba0c6, type: 3}
+  dropTable: []
   hitMaterial: {fileID: 2100000, guid: 09dbcd79d6bbad54cab7b1e57ccd2df2, type: 2}
   whiteFrames: 60
 --- !u!114 &4504868501348967164

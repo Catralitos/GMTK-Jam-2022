@@ -11,6 +11,7 @@ namespace Enemy
         public int CurrentHealth { get; private set; }
         public LayerMask bulletMask;
         public GameObject expPickup;
+        public GameObject fullHeal;
         public GameObject[] dropTable;
     
         private SpriteRenderer _renderer;
@@ -45,7 +46,7 @@ namespace Enemy
                 _isDead = true;
                 if(PlayerSkills.instance.IsUnlocked(PlayerSkills.Upgrades.HealthDrops)) {
                     if(deathCount >= PlayerSkills.instance.numberOfDeathsTillDrop) {
-                        //TO DO: Drop full hp pack
+                        Instantiate(fullHeal, transform.position, transform.rotation);
                         deathCount += 0;
                     }
                     deathCount++;
@@ -56,14 +57,7 @@ namespace Enemy
                 //PlayerEntity.Instance.progression.AddExperience(exp);
                 int drop = Random.Range(-1, dropTable.Length);
                 if (dropTable.Length != 0 && drop != -1)
-                    if(dropTable[drop].name == "Full heal"){
-                        int test = Random.Range(0, 21);
-                        Debug.Log(test);
-                        if(test == 0)
-                            Instantiate(dropTable[drop], transform.position, transform.rotation);
-                    }
-                    else
-                        Instantiate(dropTable[drop], transform.position, transform.rotation);
+                    Instantiate(dropTable[drop], transform.position, transform.rotation);
                 Destroy(this.gameObject);
             }
         }
