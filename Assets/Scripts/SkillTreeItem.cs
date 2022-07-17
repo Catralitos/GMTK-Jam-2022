@@ -34,24 +34,13 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         else
         {
-            if (CanBeBought())
-            {
+
                 ColorBlock cb = toggle.colors;
                 cb.normalColor = new Color(0.75f, 0.75f, 0.75f);
                 cb.selectedColor = Color.red;
                 cb.highlightedColor = new Color(0.6f, 0.6f, 0.6f);
                 cb.pressedColor = new Color(0.8f, 0.8f, 0.8f);
                 toggle.colors = cb;
-            }
-            else
-            {
-                ColorBlock cb = toggle.colors;
-                cb.normalColor = new Color(0.35f, 0.35f, 0.35f);
-                cb.selectedColor = new Color(0.35f, 0.35f, 0.35f);
-                cb.highlightedColor = new Color(0.35f, 0.35f, 0.35f);
-                cb.pressedColor = new Color(0.35f, 0.35f, 0.35f);
-                toggle.colors = cb;
-            }
         }
     }
 
@@ -117,8 +106,6 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void Unlock()
     {
-        if (!CanBeBought()) return;
-
         PlayerSkills.instance.Unlock(skill);
 
         SkillTree.Instance.currentPoints -= cost;
