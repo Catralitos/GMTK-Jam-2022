@@ -53,6 +53,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        StatsCollector.SurvivedTime(Time.deltaTime);
         if(!onWaveCooldown)
             timeSinceWaveStart += Time.deltaTime;
         if(timeSinceWaveStart > waveTime && !onWaveCooldown) {
@@ -126,6 +127,7 @@ public class EnemySpawner : MonoBehaviour
         onWaveCooldown = false;
         timeSinceWaveStart = 0;
         wave++;
+        StatsCollector.ClearedWave();
         waveBasePop = Mathf.FloorToInt(baseValue + growthFactor*(wave - 1));
         currentMaxPop = waveBasePop;
     }
