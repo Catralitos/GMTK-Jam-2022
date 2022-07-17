@@ -434,8 +434,8 @@ TextureImporter:
       name: ui2_29
       rect:
         serializedVersion: 2
-        x: 56
-        y: 24
+        x: 128
+        y: 32
         width: 6
         height: 6
       alignment: 0
