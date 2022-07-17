@@ -15,6 +15,8 @@ namespace Player
         [HideInInspector] public int experienceForNextLevel;
         [HideInInspector] public float nextPercentageIncrease;
 
+        private PlayerShooting _playerShooting;
+
         private void Start()
         {
             currentLevel = 1;
@@ -22,6 +24,7 @@ namespace Player
             currentExperience = 0;
             experienceForNextLevel = baseLevelExperience;
             SetNewPercentageIncrease();
+            _playerShooting = GetComponent<PlayerShooting>();
         }
 
         public void AddExperience(int expPoints)
@@ -40,6 +43,7 @@ namespace Player
             experienceForNextLevel +=
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
             PlayerUI.Instance.DisplayLevelUpUI(statsToLevelUp);
+            _playerShooting.doShockwave();
         }
 
         public void SetNewPercentageIncrease()

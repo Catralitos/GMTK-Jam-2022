@@ -9,6 +9,7 @@ namespace Player
         //public GameObject explosionPrefab;
 
         private PlayerMovement _playerMovement;
+        private PlayerShooting _playerShooting;
         private SpriteRenderer _renderer;
         private Material _defaultMaterial;
         public Material hitMaterial;
@@ -20,6 +21,7 @@ namespace Player
         private void Start()
         {
             _playerMovement = GetComponent<PlayerMovement>();
+            _playerShooting = GetComponent<PlayerShooting>();
             hitsLeft = playerHits;
             _renderer = GetComponent<SpriteRenderer>();
             _defaultMaterial = _renderer.material;
@@ -35,6 +37,7 @@ namespace Player
                 _renderer.material = hitMaterial;
                 _invincible = true;
                 Invoke(nameof(RestoreVulnerability), invincibilityFrames * Time.deltaTime);
+                _playerShooting.doShockwave();
             }
             else
             {

@@ -18,6 +18,7 @@ namespace Player
         public int angleOffset = -90;
 
         public GameObject firePoint;
+        public GameObject lightPoint;
 
         private Animator _animator;
 
@@ -37,6 +38,7 @@ namespace Player
         private Vector2 _moveV;
         private Vector2 _moveH;
 
+        private float adjustedAngle;
         private void Awake()
         {
             //_gameManager = GameManager.Instance;
@@ -125,6 +127,7 @@ namespace Player
 
             _lastAngle = _angle;
             _angle = Mathf.Atan2(_aim.y, _aim.x) * Mathf.Rad2Deg + angleOffset;
+            adjustedAngle = Mathf.Atan2(-_aim.y, -_aim.x) * Mathf.Rad2Deg + angleOffset;
 
             _animator.SetFloat("AimY", _aim.y);
             _animator.SetFloat("AimX", _aim.x);
@@ -132,7 +135,10 @@ namespace Player
 
             if ((!mouseControl && Mathf.Abs(_lastAngle - _angle) > controllerRotationSensitivity)
                 || (mouseControl && Mathf.Abs(_lastAngle - _angle) > mouseRotationSensitivity))
+            {
                 firePoint.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+                lightPoint.transform.rotation = Quaternion.AngleAxis(adjustedAngle, Vector3.forward);
+            }
         }
     }
 }

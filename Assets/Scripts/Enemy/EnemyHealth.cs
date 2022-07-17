@@ -30,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DoDamage(int damage){
         CurrentHealth -= damage;
-        GetComponent<EnemyMovement>().TakeKnockback();
+        GetComponent<EnemyMovement>().TakeKnockback(false);
         if (CurrentHealth <= 0 && isDead == false)
         {
             isDead = true;
