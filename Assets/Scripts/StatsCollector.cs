@@ -19,6 +19,7 @@ public class StatsCollector : MonoBehaviour {
     PlayerStats stats;
 
     private void Awake() {
+        DontDestroyOnLoad(gameObject);
         instance = this;
 
     }

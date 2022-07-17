@@ -8,6 +8,7 @@ public class DeathScreen : MonoBehaviour
 {
     public Button mainMenuButton;
     public Button restarButton;
+    public Button creditsButton;
     public TextMeshProUGUI statsBox;
     [HideInInspector]public string statsString;
     //private AudioManager _audioManager;
@@ -26,11 +27,17 @@ public class DeathScreen : MonoBehaviour
         statsBox.text = statsString;
         mainMenuButton.onClick.AddListener(BackToMainMenu);
         restarButton.onClick.AddListener(Restart);
+        creditsButton.onClick.AddListener(Credits);
     }
 
     void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+     void Credits()
+    {
+        SceneManager.LoadScene(3);
     }
     
    void Restart()
