@@ -30,6 +30,7 @@ namespace Player
         public void DoDamage(int damage)
         {
             if (_invincible) return;
+            GameManager.Instance.audioManager.Play("takingdamage");
             if (hitsLeft > 1)
             {
                 //AudioManager.Instance.Play("PlayerHit");
