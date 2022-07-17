@@ -352,10 +352,22 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 962559520168160180, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1396743086, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
+    - target: {fileID: 1356703699248618013, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -218700500, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
     - target: {fileID: 1366695593399143285, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1453429344134459689, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -479965686, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
     - target: {fileID: 1736614807176933110, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: skill
       value: 6
@@ -632,10 +644,26 @@ PrefabInstance:
       propertyPath: skill
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6985215778980662551, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -525032517, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
+    - target: {fileID: 7154103865218457297, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1898712031, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
+    - target: {fileID: 7729462899568163569, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1039168759, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
     - target: {fileID: 7996579651834122784, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: skill
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8579597974374218597, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 267159995, guid: 9c624bed0c8917045a6627a3817480c3, type: 3}
     - target: {fileID: 8647179003025320199, guid: ad2c4ec6bfcee7641a1748af208d377f, type: 3}
       propertyPath: skill
       value: 2
