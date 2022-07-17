@@ -49,14 +49,6 @@ namespace Player
         public void AddWavePoint()
         {
             currentWavePoints++;
-            currentWavePoints++;
-            currentWavePoints++;
-            currentWavePoints++;
-            currentWavePoints++;
-            _totalWavePoints++;
-            _totalWavePoints++;
-            _totalWavePoints++;
-            _totalWavePoints++;
             _totalWavePoints++;
             if (_totalWavePoints % 5 == 0)
             {
