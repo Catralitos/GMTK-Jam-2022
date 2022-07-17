@@ -30,6 +30,7 @@ namespace UI
         [HideInInspector] public int statsToLevelUp;
 
         private bool _add;
+        private bool _confirmed;
         private int _currentFace;
 
         private List<Toggle> addToggles = new List<Toggle>();
@@ -77,6 +78,7 @@ namespace UI
         private void OnEnable()
         {
             _player = PlayerEntity.Instance;
+            _confirmed = false;
             levelUpText.text = "Please choose a side to change your odds by " +
                                (_player.progression.nextPercentageIncrease * 100);
             _currentPercentages = _player.dice.GetAllPercentages();
@@ -156,11 +158,11 @@ namespace UI
             {
                 percentageBars[i].fillAmount = _currentPercentages[i] / 1.0f;
             }
-            
         }
 
         private void AddToPercentage(int face)
         {
+            if (_confirmed) return;
             _currentPercentages =
                 _player.dice.GetSpeculativeAdditivePercentages(face,
                     _player.progression.nextPercentageIncrease);
@@ -171,6 +173,7 @@ namespace UI
 
         private void SubtractFromPercentage(int face)
         {
+            if (_confirmed) return;
             _currentPercentages =
                 _player.dice.GetSpeculativeSubtractivePercentages(face,
                     _player.progression.nextPercentageIncrease);
@@ -189,6 +192,7 @@ namespace UI
         private void ConfirmButton()
         {
             if (!IsAToggleOn()) return;
+            _confirmed = true;
             if (_add)
             {
                 _player.dice.AddPercentage(_currentFace, _player.progression.nextPercentageIncrease);
@@ -212,8 +216,8 @@ namespace UI
         private bool IsAToggleOn()
         {
             return addToggle1.isOn || addToggle2.isOn || addToggle3.isOn || addToggle4.isOn || addToggle5.isOn ||
-                   addToggle6.isOn
-                   || minusToggle1.isOn || minusToggle2.isOn || minusToggle3.isOn || minusToggle4.isOn ||
+                   addToggle6.isOn || minusToggle1.isOn || minusToggle2.isOn || minusToggle3.isOn ||
+                   minusToggle4.isOn ||
                    minusToggle5.isOn || minusToggle6.isOn;
         }
     }
