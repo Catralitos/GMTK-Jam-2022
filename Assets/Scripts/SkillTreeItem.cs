@@ -58,7 +58,7 @@ public class SkillTreeItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private bool CanBeBought()
     {
-        if (cost >= SkillTree.Instance.stillAvailablePoints) return false;
+        if (cost > SkillTree.Instance.stillAvailablePoints) return false;
         foreach (SkillTreeItem dependency in dependencies)
         {
             if (dependency.unlocked == false && !SkillTree.Instance.checkout.Contains(dependency)) return false;

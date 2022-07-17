@@ -41,6 +41,7 @@ public class PlayerSkills : MonoBehaviour {
     }
 
     public void Unlock(Upgrades id) {
+        Debug.Log(id);
         upgrades[(int)id] = true;
     }
 
