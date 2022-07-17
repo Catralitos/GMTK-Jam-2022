@@ -7,8 +7,9 @@ public class ExpPickup : Pickup
 {
     private int exp;
 
-    public void set(int newExp){
+    public void Set(int newExp){
         exp = newExp;
+        transform.localScale *= exp/50.0f;
     }
 
     public override void Effect()
