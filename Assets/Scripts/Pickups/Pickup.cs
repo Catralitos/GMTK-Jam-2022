@@ -7,7 +7,7 @@ public abstract class Pickup : MonoBehaviour
 {
     public virtual float Duration 
     { 
-        get { return 5f; } 
+        get { return 120f; } 
     }
 
     public virtual float StartupTime

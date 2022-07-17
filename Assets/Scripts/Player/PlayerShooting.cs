@@ -9,6 +9,8 @@ namespace Player
         public int baseBullets = 1;
         public float coneAngle = 60.0f;
         public float cooldown = 1.0f;
+        public float shockwaveRadius = 2.0f;
+        public LayerMask enemyLayer;
         [HideInInspector] public float cooldownLeft;
 
         public GameObject bulletPrefab;
@@ -93,6 +95,14 @@ namespace Player
 
             _canShoot = false;
             cooldownLeft = cooldown;
+        }
+
+        public void doShockwave() {
+            Vector2 playerPosition = PlayerEntity.Instance.gameObject.transform.position;
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(playerPosition, shockwaveRadius, enemyLayer.value);
+            foreach(Collider2D collider in enemies) {
+                collider.GetComponent<EnemyMovement>().TakeKnockback(true);
+            }
         }
     }
 }

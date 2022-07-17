@@ -75,12 +75,12 @@ public class EnemyMovement : MonoBehaviour
         return VectorToTarget;
     }
 
-    public void TakeKnockback()
+    public void TakeKnockback(bool isShockwave)
     {
         if(Player.PlayerEntity.Instance == null)
             return;
         knockbackStartTime = Time.time;
-        knockbackDirection = transform.position - target.transform.position;
+        knockbackDirection = isShockwave ? transform.position - Player.PlayerEntity.Instance.gameObject.transform.position : transform.position - target.transform.position;
         state = State.Knockback;
     }
 }
