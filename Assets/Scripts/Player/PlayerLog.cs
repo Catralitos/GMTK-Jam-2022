@@ -1,33 +1,36 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerLog : MonoBehaviour
+namespace Player
 {
-    private List<string> EventLog = new List<string>();
-    private string guiText = "";
-
-    public Label label;
-    public int maxLines = 10;
-
-    private void OnGUI()
+    public class PlayerLog : MonoBehaviour
     {
-        label.text = guiText;
-    }
+        private List<string> EventLog = new List<string>();
+        private string guiText = "";
 
-    public void AddEvent(string eventString)
-    {
-        EventLog.Add(eventString);
+        public Label label;
+        public int maxLines = 10;
 
-        if (EventLog.Count >= maxLines)
-            EventLog.RemoveAt(0);
-
-        guiText = "";
-
-        foreach (string logEvent in EventLog)
+        private void OnGUI()
         {
-            guiText += logEvent;
-            guiText += "\n";
+            label.text = guiText;
+        }
+
+        public void AddEvent(string eventString)
+        {
+            EventLog.Add(eventString);
+
+            if (EventLog.Count >= maxLines)
+                EventLog.RemoveAt(0);
+
+            guiText = "";
+
+            foreach (string logEvent in EventLog)
+            {
+                guiText += logEvent;
+                guiText += "\n";
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 namespace Player
 {
@@ -14,9 +15,11 @@ namespace Player
         [HideInInspector] public int currentBaseLevelExperience;
         [HideInInspector] public int currentExperience;
         [HideInInspector] public int currentLevel;
+        [HideInInspector] public int currentWavePoints;
         [HideInInspector] public int experienceForNextLevel;
         [HideInInspector] public float nextPercentageIncrease;
 
+        private int _totalWavePoints;
         private bool _leveledUp = false;
         private PlayerShooting _playerShooting;
         PlayerHealth _playerHealth;
@@ -43,6 +46,16 @@ namespace Player
             }
         }
 
+        public void AddWavePoint()
+        {
+            currentWavePoints++;
+            _totalWavePoints++;
+            if (_totalWavePoints % 5 == 0)
+            {
+                Invoke(nameof(ShowSkillTree), levelUpDelay);
+            }
+        }
+
         private void LevelUp()
         {
             currentLevel++;
@@ -51,8 +64,13 @@ namespace Player
                 Mathf.RoundToInt(Mathf.Pow(currentLevel, 1f / levelGrowthFactor) * baseLevelExperience);
             PlayerUI.Instance.DisplayLevelUpUI(statsToLevelUp);
             _playerShooting.doShockwave();
-            if(healOnLevelUp) _playerHealth.FullyHeal();
+            if (healOnLevelUp) _playerHealth.FullyHeal();
             _leveledUp = false;
+        }
+
+        private void ShowSkillTree()
+        {
+            PlayerUI.Instance.DisplaySkillTree();
         }
 
         public void SetNewPercentageIncrease()

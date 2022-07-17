@@ -1,25 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Player;
 using Extensions;
+using UnityEngine;
 
-public class Attractor : MonoBehaviour
+namespace Pickups
 {
-    public float AttractorSpeed;
-    public LayerMask playerMask;
+    public class Attractor : MonoBehaviour
+    {
+        public float AttractorSpeed;
+        public LayerMask playerMask;
 
-    void OnTriggerStay2D(Collider2D col){
-         if (playerMask.HasLayer(col.gameObject.layer))
+        void OnTriggerStay2D(Collider2D col){
+            if (playerMask.HasLayer(col.gameObject.layer))
             {
-            transform.position = Vector2.MoveTowards(transform.position, col.transform.position, AttractorSpeed * Time.deltaTime);
-            AttractorSpeed += 0.1f * AttractorSpeed;
+                transform.position = Vector2.MoveTowards(transform.position, col.transform.position, AttractorSpeed * Time.deltaTime);
+                AttractorSpeed += 0.1f * AttractorSpeed;
+            }
         }
-    }
     
-    private void Update(){
-        if(transform.childCount < 1){
-            Destroy(gameObject);
+        private void Update(){
+            if(transform.childCount < 1){
+                Destroy(gameObject);
+            }
         }
     }
 }

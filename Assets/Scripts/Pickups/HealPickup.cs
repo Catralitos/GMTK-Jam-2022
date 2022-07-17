@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Player;
 
-public class HealPickup : Pickup
+namespace Pickups
 {
-    public override void Effect()
+    public class HealPickup : Pickup
     {
-        PlayerEntity.Instance.health.Heal(1);
-        //SoundManager.Instance.PlayOneShot("Heal");
+        public override void Effect()
+        {
+            PlayerEntity.Instance.health.Heal(1);
+            //SoundManager.Instance.PlayOneShot("Heal");
+        }
     }
 }
