@@ -20,7 +20,7 @@ public class DeathScreen : MonoBehaviour
         statsString = statsString + "Small Enemies Killed: " + stats.smallEnemiesKilled +
             "\nLarge Enemies Killed: " + stats.largeEnemiesKilled + "\nBase Enemies Killed: " +  stats.baseEnemiesKilled + 
             "\nTotal Exp Obtained: " + stats.totalExpObtained +
-            "\nWaves Cleared: " + stats.wavesCleared + "\nTime Survived: " + stats.timeSurvived +
+            "\nWaves Cleared: " + stats.wavesCleared + "\nTime Survived: " + stats.timeSurvived.ToString("000.0") + " s" +
             "\nSuper Bullets Shot: " + stats.superBulletsShot + 
             "\nKnockback Bullets Shot: " + stats.knockbackBulletsShot + "\nMulti Bullets Shot: " + stats.multiBulletsShot + 
             "\nPiercing Bullets Shot: " + stats.piercingBulletsShot;
