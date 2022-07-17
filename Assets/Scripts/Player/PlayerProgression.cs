@@ -1,5 +1,6 @@
 ﻿using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -52,7 +53,18 @@ namespace Player
             _totalWavePoints++;
             if (_totalWavePoints % 5 == 0)
             {
-                Invoke(nameof(ShowSkillTree), levelUpDelay);
+                if (_totalWavePoints == 95)
+                {
+                    PlayerEntity.Instance.buffs.stackableBuffs = true;
+                }
+                else if (_totalWavePoints == 100)
+                {
+                    SceneManager.LoadScene(3);
+                }
+                else
+                {
+                    Invoke(nameof(ShowSkillTree), levelUpDelay);
+                }
             }
         }
 

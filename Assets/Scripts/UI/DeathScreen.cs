@@ -17,13 +17,13 @@ public class DeathScreen : MonoBehaviour
     {
         //_audioManager = GetComponent<AudioManager>();
         StatsCollector.PlayerStats stats = StatsCollector.GetStats();
-        statsString = statsString + "smallEnemiesKilled: " + stats.smallEnemiesKilled +
-            " largeEnemiesKilled: " + stats.largeEnemiesKilled + " baseEnemiesKilled: " +  stats.baseEnemiesKilled + 
-            " totalExpObtained: " + stats.totalExpObtained +
-            " wavesCleared: " + stats.wavesCleared + " timeSurvived: " + stats.timeSurvived +
-            " superBulletsShot: " + stats.superBulletsShot + 
-            " knockbackBulletsShot: " + stats.knockbackBulletsShot + " multiBulletsShot: " + stats.multiBulletsShot + 
-            " piercingBulletsShot: " + stats.piercingBulletsShot;
+        statsString = statsString + "Small Enemies Killed: " + stats.smallEnemiesKilled +
+            "\nLarge Enemies Killed: " + stats.largeEnemiesKilled + "\nBase Enemies Killed: " +  stats.baseEnemiesKilled + 
+            "\nTotal Exp Obtained: " + stats.totalExpObtained +
+            "\nWaves Cleared: " + stats.wavesCleared + "\nTime Survived: " + stats.timeSurvived +
+            "\nSuper Bullets Shot: " + stats.superBulletsShot + 
+            "\nKnockback Bullets Shot: " + stats.knockbackBulletsShot + "\nMulti Bullets Shot: " + stats.multiBulletsShot + 
+            "\nPiercing Bullets Shot: " + stats.piercingBulletsShot;
         statsBox.text = statsString;
         mainMenuButton.onClick.AddListener(BackToMainMenu);
         restarButton.onClick.AddListener(Restart);
@@ -37,7 +37,7 @@ public class DeathScreen : MonoBehaviour
 
      void Credits()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     
    void Restart()
