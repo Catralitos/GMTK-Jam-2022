@@ -7,6 +7,7 @@ namespace Player
 {
     public class PlayerShooting : MonoBehaviour
     {
+        
         public int baseBullets = 1;
         public float coneAngle = 60.0f;
         public float cooldown = 1.0f;
@@ -21,6 +22,7 @@ namespace Player
 
         private bool _canShoot = true;
 
+       
         private void Update()
         {
             if (cooldownLeft < 0) _canShoot = true;
@@ -30,6 +32,8 @@ namespace Player
         public void Shoot()
         {
             if (!_canShoot) return;
+            GameManager.Instance.audioManager.Play("shooting");
+
             var gunPosition = firePoint.position;
 
             int bulletsToSpawn = baseBullets;
